@@ -3,25 +3,21 @@ import './Tooth.css';
 import useContextMenu from 'contextmenu';
 import 'contextmenu/ContextMenu.css';
 
-function Tooth({ number, positionX, positionY, onChange, data = {} }) {
+function Tooth({ number, positionX, positionY, onChange, initialState = {
+	Cavities: {
+		center: 0,
+		top: 0,
+		bottom: 0,
+		left: 0,
+		right: 0
+	},
+	Extract: 0,
+	Crown: 0,
+	Filter: 0,
+	Fracture: 0
+}}) {
 
-	const initialState = {
-		Cavities: {
-			center: 0,
-			top: 0,
-			bottom: 0,
-			left: 0,
-			right: 0
-		},
-		Extract: 0,
-		Crown: 0,
-		Filter: 0,
-		Fracture: 0
-	};
-
-	if(data.length > 0) {
-		const initialState = data;
-	}
+	// console.log("Diente numero:", number, data);
 
 	function reducer(toothState, action) {
 		switch (action.type) {
@@ -53,6 +49,7 @@ function Tooth({ number, positionX, positionY, onChange, data = {} }) {
 	const [contextMenu, useCM] = useContextMenu({ submenuSymbol: '>' });
 
 	const firstUpdate = useRef(true);
+
 	useEffect(() => {
 		if (firstUpdate.current) {
 			firstUpdate.current = false;

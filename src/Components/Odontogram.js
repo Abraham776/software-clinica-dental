@@ -6,7 +6,7 @@ function Odontogram({ data = [] }) {
 	let odontogramState = {};
 	let teethArr = [];
 
-	console.log(data);
+	// console.log(data);
 
 	const handleToothUpdate = (id, toothState) => {
 		odontogramState[id] = toothState;

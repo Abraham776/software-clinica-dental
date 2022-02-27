@@ -16,7 +16,7 @@ function Teeth({ start, end, x, y, handleChange, data = {} }) {
 						number={i}
 						positionY={y}
 						positionX={Math.abs((i - start) * 25) + x}
-						data = {data[i]}
+						initialState = {data[i]}
 					/>
 				)
 			}
