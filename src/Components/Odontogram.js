@@ -1,17 +1,28 @@
-import React, {useState} from 'react';
+//	Sánchez Plazola José Abraham
+//	27/02/2022
+//  Componentes y driver de la función Odontograma del software
+
+import React from 'react';
 import './Odontogram.css';
 import Teeth from './Teeth';
 
+//Componente odontograma, renderiza finalmente todas las filas de dientes
 function Odontogram({ data = [] }) {
+	//OdontogramState recolecta el estado de cada diente del odontograma
 	let odontogramState = {};
+
+	//teethArr inicializa cada componente "Teeth" que corresponde a una fila de dientes del odontograma
 	let teethArr = [];
 
-	// console.log(data);
-
+	//handleToothUpdate es llamado cada vez que un diente se le asigna un nuevo estado, escribe a odontogramState.
 	const handleToothUpdate = (id, toothState) => {
 		odontogramState[id] = toothState;
 	};
 
+	//Inicializa la array de dientes dependiendo si hay datos anteriores o no
+	//
+	//TODO: Checar interacción con parametros por defecto, puede ser innecesaria esta inicialización condicional
+	//
 	if(data.length > 0) {
 		teethArr = [
 			<Teeth start={18} end={11} x={0} y={0} handleChange={handleToothUpdate} data={data[0]}/>,
@@ -42,6 +53,7 @@ function Odontogram({ data = [] }) {
 		];
 	}
 
+	//Regresa el renderizado de la array de dientes
 	return (
 		<>
 			<div className="Odontogram">

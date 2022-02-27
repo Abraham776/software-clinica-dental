@@ -1,8 +1,12 @@
+//	Sánchez Plazola José Abraham
+//	27/02/2022
+//  Componentes y driver de la función Odontograma del software
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Odontogram from './Components/Odontogram'
-import TestMenu from './Components/TestMenu'
 
+// String de prueba para simular la funcionalidad de una base de datos que regrese un archivo JSON
 const string = `{
 	"16": {
 		"Cavities": {
@@ -32,7 +36,11 @@ const string = `{
 	}
 }`
 
+//	Función para separar los datos cargados en las filas de dientes del odontograma
+// 	data: JSON con keys iguales a los numeros de cada diente y valores de caries y otras operaciones del dentista
+// 	Regresa una array donde se concentran cada fila de dientes con sus objetos correspondientes
 function separateData(data) {
+	//Inicializando objetos de cada fila
 	let row1 = {};
 	var row2 = {};
 	var row3 = {};
@@ -41,7 +49,11 @@ function separateData(data) {
 	var row6 = {};
 	var row7 = {};
 	var row8 = {};
+	
+	//Iterando a través del JSON data para extraer la información y separarla en las filas de dientes correspondientes
 	Object.keys(data).forEach((key) => {
+		//Parse a integer del número de la llave en string
+		// "16" => 16
 		let keyNumber = parseInt(key, 10);
 
 		if(18 >= keyNumber && keyNumber >= 11){
@@ -69,36 +81,16 @@ function separateData(data) {
 			row8[key] = data[key];
 
 		}
-		
-		// console.log(rows);
 	})
+
+	//Array final de las filas completas
 	var rows = [row1, row2, row3, row4, row5, row6, row7, row8]
 	return rows;
 }
 
-// let jason = JSON.parse(string);
-// console.log(jason);
-// console.log( separateData(jason) );
-
-// let a = { "16":jason["16"] };
-// let c = { "17":jason["17"] };
-// a = {...a, ...c};
-// console.log(a);
-
-// let b = [];
-// Object.keys(jason).forEach(
-// 	(key) => {
-// 		a[key] = jason[key];
-// 		console.log(parseInt(key, 10));
-// 		// b[parseInt(key, 10)] = jason[key];
-// 	}
-// );
-// b = [a, c];
-// console.log(b);
-
-
 ReactDOM.render(
 	<React.StrictMode>
+		{/* Pasamos la información regresada por separateData al componente odontograma. JSON.parse(string) regresa un objeto dada la string de prueba */}
 		<Odontogram data = {separateData(JSON.parse(string))}/>
 	</React.StrictMode>,
 	document.getElementById('root')

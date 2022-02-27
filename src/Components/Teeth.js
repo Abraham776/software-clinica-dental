@@ -1,11 +1,15 @@
+//	Sánchez Plazola José Abraham
+//	27/02/2022
+//  Componentes y driver de la función Odontograma del software
 import React from 'react';
 import Tooth from './Tooth';
 
+//Componente dientes, maneja cada fila de dientes del odontograma e inicializa sus dientes dependientes
 function Teeth({ start, end, x, y, handleChange, data = {} }) {
+	//Inicializa una array para colocar los números de diente de acuerdo al odontograma
 	let tooths = getArray(start, end);
 
-	// console.log(data);
-
+	//Regresa cada componente diente como una tag svg con un escalado de 2.
 	return (
 		<g transform="scale(2)" id="gmain">
 			{
@@ -24,6 +28,7 @@ function Teeth({ start, end, x, y, handleChange, data = {} }) {
 	)
 }
 
+//Dependiendo del ordenamiento (Los odontogramas siguen un orden especifico) obtiene una array normal o una array inversa (De mayor a menor o de menor a mayor)
 function getArray(start, end) {
 	if (start > end) return getInverseArray(start, end);
 
