@@ -3,7 +3,7 @@ import './Tooth.css';
 import useContextMenu from 'contextmenu';
 import 'contextmenu/ContextMenu.css';
 
-function Tooth({ number, positionX, positionY, onChange }) {
+function Tooth({ number, positionX, positionY, onChange, data = {} }) {
 
 	const initialState = {
 		Cavities: {
@@ -18,6 +18,10 @@ function Tooth({ number, positionX, positionY, onChange }) {
 		Filter: 0,
 		Fracture: 0
 	};
+
+	if(data.length > 0) {
+		const initialState = data;
+	}
 
 	function reducer(toothState, action) {
 		switch (action.type) {
