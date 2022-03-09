@@ -1,5 +1,6 @@
 import React from "react";
 import Sidebar from "../componentes/sidebar";
+import Boton from "../componentes/BotonP";
 import "../home.scss";
 
 const Paciente = () => {
@@ -18,6 +19,7 @@ const Paciente = () => {
             <Sidebar/>
             
                 Paciente
+                <Boton text="Ver"/>
 
             </div>
             
