@@ -12,4 +12,5 @@ Router | Npm install react-router-dom | https://www.npmjs.com/package/react-rout
 Bootstrap | npm install bootstrap | https://getbootstrap.com
 Reactrap | npm install reactstrap react react-dom | https://reactstrap.github.io/?path=/story/home-installation--page
 icons | npm install react-icons --save | https://react-icons.github.io/react-icons
+Scss | npm install -s node-sass | https://www.better.dev/adding-sass-to-create-react-app
 
