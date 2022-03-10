@@ -7,3 +7,9 @@ Software para la administración de una clinica dental. Hecho para las siguiente
 
 # Dependencias
 contextmenu | https://github.com/tetranoir/contextmenu
+
+Router | Npm install react-router-dom
+Bootstrap | npm install bootstrap
+Reactrap | npm install reactstrap react react-dom
+icons | npm install react-icons --save
+
