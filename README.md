@@ -8,8 +8,8 @@ Software para la administración de una clinica dental. Hecho para las siguiente
 # Dependencias
 contextmenu | https://github.com/tetranoir/contextmenu
 
-Router | Npm install react-router-dom
-Bootstrap | npm install bootstrap
-Reactrap | npm install reactstrap react react-dom
-icons | npm install react-icons --save
+Router | Npm install react-router-dom | https://www.npmjs.com/package/react-router-dom
+Bootstrap | npm install bootstrap | https://getbootstrap.com
+Reactrap | npm install reactstrap react react-dom | https://reactstrap.github.io/?path=/story/home-installation--page
+icons | npm install react-icons --save | https://react-icons.github.io/react-icons
 
