@@ -12,9 +12,9 @@ const Administracion = () => {
 
 
 
+			<Sidebar />
 
 			<div className="contenido-in">
-				<Sidebar />
 
 				Admin
 

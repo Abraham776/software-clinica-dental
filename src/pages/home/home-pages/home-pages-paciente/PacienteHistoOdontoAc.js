@@ -15,9 +15,9 @@ const PacienteHistoOdontoAc = () => {
 
 
 
-
+			<Sidebar />
 			<div className="contenido-in">
-				<Sidebar />
+
 
 				odontograma Actual
 

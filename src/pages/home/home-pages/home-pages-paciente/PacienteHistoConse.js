@@ -15,9 +15,9 @@ const PacienteHistoConse = () => {
 
 
 
-
+			<Sidebar />
 			<div className="contenido-in">
-				<Sidebar />
+
 
 				Consentimiento
 

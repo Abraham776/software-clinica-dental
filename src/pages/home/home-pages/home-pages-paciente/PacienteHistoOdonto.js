@@ -95,9 +95,9 @@ const PacienteHistoOdonto = () => {
 
 
 
-
+			<Sidebar />
 			<div className="contenido-in">
-				<Sidebar />
+
 			</div>
 			<Odontogram data={separateData(JSON.parse(string))} />
 

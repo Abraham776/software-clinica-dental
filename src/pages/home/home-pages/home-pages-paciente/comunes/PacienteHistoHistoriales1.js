@@ -15,9 +15,9 @@ const PacienteHistoHistoriales1 = () => {
 
 
 
-
+			<Sidebar />
 			<div className="contenido-in">
-				<Sidebar />
+
 
 				Historiales 1
 
