@@ -4,12 +4,20 @@ html, body {
 
 .contenido-in{
 	display: flex;
+	margin-left: 250px;
 }
 .home-contenido{
 	height: 100%;
 	width: 100%;
     
 }
+.form-inputs{
+	display: block;
+	width: 100%;
+	margin-left: 250px;
+	padding-top: 10px;
+}
+
 * {
 	margin: 0;
 	padding: 0;
