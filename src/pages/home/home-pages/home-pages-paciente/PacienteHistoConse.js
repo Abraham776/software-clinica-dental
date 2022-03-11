@@ -4,33 +4,33 @@ import "../../home.scss";
 
 const PacienteHistoConse = () => {
 
-    
 
-    return(
-        
-        
-        
-            <div className="home-contenido">
-    
-    
-    
-               
-                
-                <div className="contenido-in">
-                <Sidebar/>
-                
-                Consentimiento
 
-            </div>
-                
-    
-    
-            </div>
-    
-    
-       
+	return (
 
-    )
+
+
+		<div className="home-contenido">
+
+
+
+
+
+			<div className="contenido-in">
+				<Sidebar />
+
+				Consentimiento
+
+			</div>
+
+
+
+		</div>
+
+
+
+
+	)
 
 
 };

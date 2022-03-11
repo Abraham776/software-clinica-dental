@@ -5,30 +5,30 @@ import "../home.scss";
 
 const Paciente = () => {
 
-   
-
-    return(
-        
-        <div className="home-contenido">
 
 
+	return (
 
-          
-            <div className="contenido-in">
-             
-            <Sidebar/>
-            
-                Paciente
-                <Boton text="Ver"/>
-
-            </div>
-            
+		<div className="home-contenido">
 
 
-        </div>
 
 
-    )
+			<div className="contenido-in">
+
+				<Sidebar />
+
+				Paciente
+				<Boton text="Ver" />
+
+			</div>
+
+
+
+		</div>
+
+
+	)
 
 
 

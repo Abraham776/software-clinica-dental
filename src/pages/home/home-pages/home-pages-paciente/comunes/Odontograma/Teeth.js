@@ -14,13 +14,13 @@ function Teeth({ start, end, x, y, handleChange, data = {} }) {
 		<g transform="scale(1.8)" id="gmain">
 			{
 				tooths.map((i) =>
-					<Tooth 
+					<Tooth
 						onChange={handleChange}
 						key={i}
 						number={i}
 						positionY={y}
 						positionX={Math.abs((i - start) * 25) + x}
-						initialState = {data[i]}
+						initialState={data[i]}
 					/>
 				)
 			}

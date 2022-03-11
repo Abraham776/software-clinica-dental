@@ -3,28 +3,28 @@ import "./home.scss"
 import Sidebar from "./componentes/sidebar";
 const Home = () => {
 
-   
 
 
-    return(
-        
-        
-    
-        <div className="home-contenido">
+
+	return (
 
 
-        
-    <div className="contenido-in">       
-            <Sidebar/>
-        
-                Hola
 
-            </div>
+		<div className="home-contenido">
 
-        </div>
-    
 
-    )
+
+			<div className="contenido-in">
+				<Sidebar />
+
+				Hola
+
+			</div>
+
+		</div>
+
+
+	)
 
 
 

@@ -19,7 +19,7 @@ function Tooth({ number, positionX, positionY, onChange, initialState = {
 	Crown: 0,
 	Filter: 0,
 	Fracture: 0
-}}) {
+} }) {
 
 	//Reducer para modificar los valores del estado del diente en el JSON
 	function reducer(toothState, action) {

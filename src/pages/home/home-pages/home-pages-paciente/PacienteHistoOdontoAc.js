@@ -4,33 +4,33 @@ import "../../home.scss";
 
 const PacienteHistoOdontoAc = () => {
 
-    
 
-    return(
-        
-        
-        
-            <div className="home-contenido">
-    
-    
-    
-               
-                
-                <div className="contenido-in">
-                <Sidebar/>
-                
-                odontograma Actual
 
-            </div>
-                
-    
-    
-            </div>
-    
-    
-       
+	return (
 
-    )
+
+
+		<div className="home-contenido">
+
+
+
+
+
+			<div className="contenido-in">
+				<Sidebar />
+
+				odontograma Actual
+
+			</div>
+
+
+
+		</div>
+
+
+
+
+	)
 
 
 };

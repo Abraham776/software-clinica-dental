@@ -1,23 +1,23 @@
 import React from "react";
-const Boton = ({text}) =>{
+const Boton = ({ text }) => {
 
-    function Iniciar(){
-        window.location.href="/PacienteHisto";
-      };
-  
-    return(
-        
-        <div className="botnP">
-            
-            <button className="botonP" onClick={Iniciar}>
-                {text}
-            </button>
+	function Iniciar() {
+		window.location.href = "/PacienteHisto";
+	};
 
+	return (
 
-        </div>
+		<div className="botnP">
+
+			<button className="botonP" onClick={Iniciar}>
+				{text}
+			</button>
 
 
-    )
+		</div>
+
+
+	)
 };
 
 

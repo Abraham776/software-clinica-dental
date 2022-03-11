@@ -4,33 +4,33 @@ import "../../../home.scss";
 
 const PacienteHistoHistoriales2 = () => {
 
-    
 
-    return(
-        
-        
-        
-            <div className="home-contenido">
-    
-    
-    
-               
-                
-                <div className="contenido-in">
-                <Sidebar/>
-                
-                Historiales 2
 
-            </div>
-                
-    
-    
-            </div>
-    
-    
-       
+	return (
 
-    )
+
+
+		<div className="home-contenido">
+
+
+
+
+
+			<div className="contenido-in">
+				<Sidebar />
+
+				Historiales 2
+
+			</div>
+
+
+
+		</div>
+
+
+
+
+	)
 
 
 };

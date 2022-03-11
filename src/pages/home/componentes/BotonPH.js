@@ -1,24 +1,24 @@
 import React from "react";
 import './botonh.css';
-const Boton = ({text}) =>{
+const Boton = ({ text }) => {
 
-    function Iniciar(){
-        window.location.href="/Home";
-      };
-  
-    return(
-        
-        <div className="botnH">
-            
-            <button className="botonH" onClick={Iniciar}>
-                {text}
-            </button>
+	function Iniciar() {
+		window.location.href = "/Home";
+	};
 
+	return (
 
-        </div>
+		<div className="botnH">
+
+			<button className="botonH" onClick={Iniciar}>
+				{text}
+			</button>
 
 
-    )
+		</div>
+
+
+	)
 };
 
 
