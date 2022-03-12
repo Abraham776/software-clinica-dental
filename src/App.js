@@ -4,6 +4,11 @@ import Paciente from './pages/home/home-pages/Pacientes';
 import HistoriaClinica from './pages/home/home-pages/HistoriaClinica';
 import AgendarCita from './pages/home/home-pages/AgendarCita';
 import Administracion from './pages/home/home-pages/Administracion';
+import AdministracionDoctores from './pages/home/home-pages/AdministracionDoctores';
+import AdministracionTratamientos from './pages/home/home-pages/AdministracionTratamientos';
+import AdministracionTratamientosAdd from './pages/home/home-pages/AdministracionTratamientosAdd';
+import AdministracionDoctoresAdd from './pages/home/home-pages/AdministracionDoctoresAdd';
+import AdministracionTratamientosVista from './pages/home/home-pages/AdministracionTratamientosVista';
 import PacienteHisto from './pages/home/home-pages/home-pages-paciente/PacienteHisto';
 import PacienteHistoConse from './pages/home/home-pages/home-pages-paciente/PacienteHistoConse';
 import PacienteHistoEvolucion from './pages/home/home-pages/home-pages-paciente/PacienteHistoEvolucion';
@@ -20,12 +25,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 export default function App() {
 	return (
-
-
-
 		<BrowserRouter>
-
-
 			<Routes>
 				<Route path="/" element={<Login />} />
 				<Route path="/home" element={<Home />} />
@@ -33,6 +33,11 @@ export default function App() {
 				<Route path='/historiaClinica' element={<HistoriaClinica />} />
 				<Route path='/agendarCita' element={<AgendarCita />} />
 				<Route path='/administracion' element={<Administracion />} />
+				<Route path='/administraciondoctores' element={<AdministracionDoctores />} />
+				<Route path='/administraciontratamientos' element={<AdministracionTratamientos/>} />
+				<Route path='/AdministracionDoctoresAdd' element={<AdministracionDoctoresAdd />} />
+				<Route path='/AdministracionTratamientosAdd' element={<AdministracionTratamientosAdd />} />
+				<Route path='/AdministracionTratamientosVista' element={<AdministracionTratamientosVista />} />
 				<Route path='/PacienteHisto' element={<PacienteHisto />} />
 				<Route path='/PacienteHistoConse' element={<PacienteHistoConse />} />
 				<Route path='/PacienteHistoEvolucion' element={<PacienteHistoEvolucion />} />
@@ -45,17 +50,7 @@ export default function App() {
 				<Route path='/PacienteHistoHistoriales3' element={<PacienteHistoHistoriales3 />} />
 				<Route path='/PacienteHistoHistoriales4' element={<PacienteHistoHistoriales4 />} />
 				<Route path='/PacienteHistoHistoriales5' element={<PacienteHistoHistoriales5 />} />
-
-
 			</Routes>
-
-
-
-
-
-
 		</BrowserRouter>
-
-
 	);
 }

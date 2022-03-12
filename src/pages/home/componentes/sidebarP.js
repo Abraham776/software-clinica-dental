@@ -8,7 +8,6 @@ import MenuOdo from "./OpcionesOdo";
 import { AiOutlineUser, AiOutlineReconciliation, AiOutlineSmile, AiOutlinePicture, AiOutlineFile, AiOutlineSafety } from 'react-icons/ai';
 
 
-
 const sidebar = () => {
 
 

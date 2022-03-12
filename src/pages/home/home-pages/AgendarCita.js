@@ -7,15 +7,10 @@ const AgendaCita = () => {
 		<div className="home-contenido">
 			<Sidebar />
 			<div className="contenido-in">
-
 				Cita
 			</div>
 		</div>
 	)
-
-
-
-
 };
 
 export default AgendaCita;
