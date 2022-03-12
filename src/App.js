@@ -21,6 +21,10 @@ import PacienteHistoHistoriales2 from './pages/home/home-pages/home-pages-pacien
 import PacienteHistoHistoriales3 from './pages/home/home-pages/home-pages-paciente/comunes/PacienteHistoHistoriales3';
 import PacienteHistoHistoriales4 from './pages/home/home-pages/home-pages-paciente/comunes/PacienteHistoHistoriales4';
 import PacienteHistoHistoriales5 from './pages/home/home-pages/home-pages-paciente/comunes/PacienteHistoHistoriales5';
+import NuevoHistorialOrt from './pages/home/home-pages/home-pages-paciente/comunes/NuevoHistorialOrt';
+import NuevoHistorialOdon from './pages/home/home-pages/home-pages-paciente/comunes/NuevoHistorialOdon';
+import NuevoHistorialEndo from './pages/home/home-pages/home-pages-paciente/comunes/NuevoHistorialEndo';
+import NuevoHistorialGeneral from './pages/home/home-pages/home-pages-paciente/comunes/NuevoHistorialGeneral';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 export default function App() {
@@ -50,6 +54,10 @@ export default function App() {
 				<Route path='/PacienteHistoHistoriales3' element={<PacienteHistoHistoriales3 />} />
 				<Route path='/PacienteHistoHistoriales4' element={<PacienteHistoHistoriales4 />} />
 				<Route path='/PacienteHistoHistoriales5' element={<PacienteHistoHistoriales5 />} />
+				<Route path='/NuevoHistorialOrt' element={<NuevoHistorialOrt/>}/>
+				<Route path='/NuevoHistorialOdon' element={<NuevoHistorialOdon/>}/>
+				<Route path='/NuevoHistorialEndo' element={<NuevoHistorialEndo/>}/>
+				<Route path='/NuevoHistorialGeneral' element={<NuevoHistorialGeneral/>}/>
 			</Routes>
 		</BrowserRouter>
 	);
