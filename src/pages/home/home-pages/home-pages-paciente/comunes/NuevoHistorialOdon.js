@@ -39,21 +39,57 @@ const NuevoHistorialOdon = () => {
                             <Label >Atención Odontológica:</Label>
 							<Input type="textarea" name="Atencion" id="Odon4" required/>
                             <Label >Nivel Socio-Económico:</Label>
-							<Input type="textarea" name="Nivel" id="Odon5" required/>
+							<select class="form-control" name="Nivel" id="Odon5" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Alto</option>
+							<option>Medio</option>
+							<option>Bajo</option>
+							</select>
                             <Label >Matrices Perinatales-Básicas:</Label>
-							<Input type="textarea" name="Matrices" id="Odon6" required/>
+							<select class="form-control" name="Matrices" id="Odon6" required>
+							<option selected>-Escoga una opción-</option>
+							<option>I</option>
+							<option>II</option>
+							<option>III</option>
+							</select>
                             <Label >Tipo de Alimentación:</Label>
 							<Input type="textarea" name="Alimentacion" id="Odon7" required/>
                             <Label >Observaciones Higiene Bucal:</Label>
 							<Input type="textarea" name="Higiene" id="Odon8" required/>
                             <Label >Hábitos:</Label>
-							<Input type="textarea" name="Habitos" id="Odon9" required/>
+							<select class="form-control" name="Habitos" id="Odon9" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Succión digital</option>
+							<option>Respirador Bucal</option>
+							<option>Biberón</option>
+							<option>Chupon</option>
+							<option>Onicofagia</option>
+							<option>Queilofagia</option>
+							<option>Geofagia</option>
+							<option>Enuresis</option>
+							</select>
                             <Label >Conducta del paciente:</Label>
-							<Input type="textarea" name="Conducta" id="Odon10" required/>
+							<select class="form-control" name="Conducta" id="Odon10" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Cooperador</option>
+							<option>Con capacidad potencial de cooperar</option>
+							<option>Tímido</option>
+							<option>Agresivo</option>
+							<option>Miedoso</option>
+							<option>Desafiante</option>
+							<option>Lloroso</option>
+							<option>Incapaz de cooperar</option>
+							</select>
+							</Col>
+							<Col sm={5}>
                             <Label >Peso:</Label>
-							<Input type="textarea" name="Peso" id="Odon11" required/>
+							<Input type="number" name="Peso" id="Odon11" required/>
+                       		</Col>
+							<Col sm={5}>
                             <Label >Altura:</Label>
-							<Input type="textarea" name="Altura" id="Odon12" required/>
+							<Input type="number" name="Altura" id="Odon12" required/>
+                       		 </Col>
+							<Col sm={11}>
                             <Label >Frecuencia Respiratoria:</Label>
 							<Input type="textarea" name="Frecuencia" id="Odon13" required/>
                             <Label >Observaciones de Faringe:</Label>

@@ -24,7 +24,7 @@ const HistorialOdontologia = () => {
 				<tr>
 				<td><img src={LogoLogin} alt="logo" />	</td>
 				<td><h2>Paciente:</h2>
-				<Button href="NuevoHistorialOrt">Agregar nueva historia clinica</Button></td>
+				<Button href="NuevoHistorialGeneral">Agregar nueva historia clinica</Button></td>
 				</tr>
 			</table>
 			<center><table class="default">

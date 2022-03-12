@@ -32,58 +32,149 @@ const NuevoHistorialOrt = () => {
 
 						<Col sm={11}>
 							<Label >Enfermedades Crónicas:</Label>
-							<Input type="text" name="Enfermedades" id="Ort1" required/>	
+							<Input type="textarea" name="Enfermedades" id="Ort1" required/>	
 							<Label >Alteraciones Congénitas:</Label>
-							<Input type="text" name="Alteraciones" id="Ort2" required/>	
+							<Input type="textarea" name="Alteraciones" id="Ort2" required/>	
 							<Label >Intervenciones Quirúrgicas:</Label>
-							<Input type="text" name="Intervenciones" id="Ort3" required/>	
+							<Input type="textarea" name="Intervenciones" id="Ort3" required/>	
 							<Label >Tratamiento Previo:</Label>
-							<Input type="text" name="Tratamiento" id="Ort4" required/>	
+							<Input type="textarea" name="Tratamiento" id="Ort4" required/>	
 						</Col>
 						<center><h1>Análisis Facial</h1></center>
 
 						<Col sm={11}>
 							<Label >Patrón Facial:</Label>
-							<Input type="text" name="Patron" id="Ort5" required/>	
+							<select class="form-control" name="Patron" id="Ort5" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Mesofacial</option>
+							<option>Dólico Facial</option>
+							<option>Braquifacial</option>
+							</select>
 							<Label >Perfil:</Label>
-							<Input type="text" name="Perfil" id="Ort6" required/>	
+							<select class="form-control" name="Perfil" id="Ort6" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Recto</option>
+							<option>Cóncavo</option>
+							<option>Convexo</option>
+							</select>
 							<Label >Asimetría:</Label>
-							<Input type="text" name="Asimetria" id="Ort7" required/>	
+							<select class="form-control" name="Asimetria" id="Ort7" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Mandíbula derecha</option>
+							<option>Mandíbula izquierda</option>
+							<option>otras</option>
+							</select>	
 							<Label >Altura Facila:</Label>
-							<Input type="text" name="Altura" id="Ort8" required/>	
+							<select class="form-control" name="Altura" id="Ort8" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Equilibrada</option>
+							<option>Larga</option>
+							<option>Corta</option>
+							</select>	
 							<Label >Ancho Facial:</Label>
-							<Input type="text" name="Ancho" id="Ort9" required/>	
+							<select class="form-control" name="Ancho" id="Ort9" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Equilibrado</option>
+							<option>Estrecho</option>
+							<option>Amplio</option>
+							</select>	
 							<Label >Perfil Maxilar:</Label>
-							<Input type="text" name="Maxilar" id="Ort10" required/>	
+							<select class="form-control" name="Maxilar" id="Ort10" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Ortognático</option>
+							<option>Prognático</option>
+							<option>Retrognático</option>
+							</select>
 							<Label >Perfil Mandibular:</Label>
-							<Input type="text" name="Mandibular" id="Ort11" required/>	
+							<select class="form-control" name="Mandibular" id="Ort11" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Ortognático</option>
+							<option>Prognático</option>
+							<option>Retrognático</option>
+							</select>
 							<Label >Surco Labio-Mentón:</Label>
-							<Input type="text" name="Surco" id="Ort12" required/>	
+							<select class="form-control" name="Surco" id="Ort12" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Normal</option>
+							<option>Marcado</option>
+							<option>Borrado</option>
+							</select>
 							<Label >Labios en Reposo:</Label>
-							<Input type="text" name="Labios" id="Ort13" required/>	
+							<select class="form-control" name="Labios" id="Ort13" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Competentes</option>
+							<option>Incompetentes</option>
+							</select>
 							<Label >Perfil Labial:</Label>
-							<Input type="text" name="Labial" id="Ort14" required/>	
+							<select class="form-control" name="Labial" id="Ort14" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Prostusivo Superior</option>
+							<option>Prostusivo Inferior</option>
+							<option>Retrusivo Superior</option>
+							<option>Retrusivo Inferior</option>
+							<option>Normal</option>
+							</select>
 						</Col>
 
 						<center><h1>Análisis Funcional</h1></center>
 
 						<Col sm={11}>
-							<Label >Respiracion:</Label>
-							<Input type="textarea" name="Respiracion" id="Ort15" required/>
+							<Label >Respiración:</Label>
+							<select class="form-control" name="Respiracion" id="Ort15" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Bucal</option>
+							<option>Nasal</option>
+							<option>Mixta</option>
+							</select>
 							<Label >Actividad Comisural:</Label>
-							<Input type="textarea" name="Comisural" id="Ort16" required/>
+							<select class="form-control" name="Comisural" id="Ort16" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Normal</option>
+							<option>Contracción</option>
+							</select>
 							<Label >Actividad Lingual:</Label>
-							<Input type="textarea" name="Lingual" id="Ort17" required/>
+							<select class="form-control" name="Lingual" id="Ort17" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Normal</option>
+							<option>Interposición Anterior</option>
+							<option>Interposición lateral</option>
+							</select>
 							<Label >Labio Superior:</Label>
-							<Input type="textarea" name="Superior" id="Ort18" required/>
+							<select class="form-control" name="Superior" id="Ort18" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Normal</option>
+							<option>Hipoactivo</option>
+							<option>Hiperactivo</option>
+							</select>
 							<Label >Labio Inferior:</Label>
-							<Input type="textarea" name="Inferior" id="Ort19" required/>
+							<select class="form-control" name="Inferior" id="Ort19" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Normal</option>
+							<option>Hipoactivo</option>
+							<option>Hiperactivo</option>
+							</select>
 							<Label >Masetero:</Label>
-							<Input type="textarea" name="Masetero" id="Ort20" required/>
+							<select class="form-control" name="Masetero" id="Ort20" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Normal</option>
+							<option>Hipoactivo</option>
+							<option>Hiperactivo</option>
+							</select>
 							<Label >Mentoniano:</Label>
-							<Input type="textarea" name="Mentoniano" id="Ort21" required/>
+							<select class="form-control" name="Mentoniano" id="Ort21" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Normal</option>
+							<option>Hipoactivo</option>
+							<option>Hiperactivo</option>
+							</select>
 							<Label >Habitos de Succión:</Label>
-							<Input type="textarea" name="Succion" id="Ort22" required/>
+							<select class="form-control" name="Succion" id="Ort22" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Dedos</option>
+							<option>Lengua</option>
+							<option>Labios</option>
+							<option>Onicofagia</option>
+							</select>
 							<Label >Análisis Esqueletal:</Label>
 							<Input type="textarea" name="Esqueleto" id="Ort23" required/>
 							<Label >Plan de Tratamiento:</Label>

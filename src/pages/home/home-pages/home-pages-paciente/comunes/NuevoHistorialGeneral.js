@@ -33,27 +33,35 @@ const NuevoHistorialGeneral = () => {
                             <Label >Motivo de la Consulta:</Label>
 							<Input type="textarea" name="Motivo" id="Gen1" required/>
                             <Label >Antecedentes Familiares:</Label>
-							<Input type="textarea" name="AntecedentesF" id="Gen1" required/>
+							<Input type="textarea" name="AntecedentesF" id="Gen2" required/>
                             <Label >Antecedentes Medicos:</Label>
-							<Input type="textarea" name="AntecedentesM" id="Gen1" required/>
+							<Input type="textarea" name="AntecedentesM" id="Gen3" required/>
                             <Label >Anomalías:</Label>
-							<Input type="textarea" name="Anomalias" id="Gen1" required/>
+							<Input type="textarea" name="Anomalias" id="Gen4" required/>
                             <Label >Dolores:</Label>
-							<Input type="textarea" name="Dolores" id="Gen1" required/>
+							<Input type="textarea" name="Dolores" id="Gen5" required/>
                             <Label >Estado de Higiene Bucal:</Label>
-							<Input type="textarea" name="Higiene" id="Gen1" required/>
+							<Input type="textarea" name="Higiene" id="Gen6" required/>
                             <Label >Presencia de Sarro:</Label>
-							<Input type="textarea" name="Sarro" id="Gen1" required/>
+							<select class="form-control" name="Sarro" id="Gen7" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Si</option>
+							<option>No</option>
+							</select>
                             <Label >Enfermedad Periodontal:</Label>
-							<Input type="textarea" name="Periodontal" id="Gen1" required/>
+							<select class="form-control" name="Periodontal" id="Gen8" required>
+							<option selected>-Escoga una opción-</option>
+							<option>Si</option>
+							<option>No</option>
+							</select>
                             <Label >Diagnostico Presuntivo:</Label>
-							<Input type="textarea" name="Diagnostico" id="Gen1" required/>
+							<Input type="textarea" name="Diagnostico" id="Gen9" required/>
                             <Label >Plan de Tratamiento:</Label>
-							<Input type="textarea" name="Tratamiento" id="Gen1" required/>
+							<Input type="textarea" name="Tratamiento" id="Gen10" required/>
                             <Label >Observaciones:</Label>
-							<Input type="textarea" name="Observaciones" id="Gen1" required/>
+							<Input type="textarea" name="Observaciones" id="Gen11" required/>
                             <Label >Pronóstico:</Label>
-							<Input type="textarea" name="Pronostico" id="Gen1" required/>
+							<Input type="textarea" name="Pronostico" id="Gen12" required/>
 						</Col>  
 					</FormGroup>
 
