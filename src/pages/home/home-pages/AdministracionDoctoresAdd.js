@@ -35,7 +35,8 @@ export const AdministracionDoctoresAdd = () => {
 					</Input>
 
 					<br/>
-					<Button>Añadir</Button>
+					<Button className="me-3">Añadir</Button>
+					<Button className="me-3" onClick={function back(){window.location.href = "/AdministracionDoctores"}}>Volver</Button>
 				</Form>
 			</div>
 		</div>

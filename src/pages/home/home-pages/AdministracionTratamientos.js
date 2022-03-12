@@ -32,7 +32,8 @@ const AdministracionTratamientos = () => {
 						</tr>
 					</tbody>
 				</Table>
-				<Button onClick={function routePaciente() { window.location.href = "/AdministracionTratamientosAdd" }}>Añadir nuevo doctor</Button>
+				<Button className="me-3" onClick={function routePaciente() { window.location.href = "/AdministracionTratamientosAdd" }}>Añadir nuevo doctor</Button>
+				<Button className="me-3" onClick={function back(){window.location.href = "/Administracion"}}>Volver</Button>
 			</div>
 		</div>
 	)
