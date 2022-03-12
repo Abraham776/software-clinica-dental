@@ -17,7 +17,7 @@ const OpcionesOdo = () => {
 			<Dropdown isOpen={dropdown} toggle={abrir} direction="right" >
 
 				<DropdownToggle caret>
-					<AiOutlineReconciliation className="me-2" />Historiales
+					<AiOutlineReconciliation className="me-2" />Odontograma
 				</DropdownToggle>
 				<DropdownMenu className="menudemenu">
 					<DropdownItem header>Odontograma</DropdownItem>
