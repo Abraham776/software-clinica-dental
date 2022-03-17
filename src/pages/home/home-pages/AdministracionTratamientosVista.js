@@ -21,7 +21,7 @@ const AdministracionTratamientosVista = () => {
 							<Input type="text" name="precio" id="precioField" />
 						</Col>
 					</FormGroup>
-					<Button className="me-3">Añadir</Button>
+					<Button className="me-3">Actualizar</Button>
 					<Button className="me-3" onClick={function back(){window.location.href = "/AdministracionTratamientos"}}>Volver</Button>
 				</Form>
 			</div>

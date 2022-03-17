@@ -15,24 +15,22 @@ const AdministracionTratamientos = () => {
 				<Table bordered hover responsive striped>
 					<thead>
 						<tr>
-							<th> Foto </th>
 							<th> Nombre </th>
-							<th> Telefono </th>
+							<th> Precio </th>
 							<th> </th>
 							<th> </th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<th> <img alt="imagen" /> </th>
-							<td> pedrito </td>
-							<td> 6691134890 </td>
+							<td> Extracción </td>
+							<td> $200 </td>
 							<td><Button block onClick={function routePaciente() { window.location.href = "/AdministracionTratamientosVista" }}>Editar</Button></td>
 							<td><Button block color="danger">Eliminar</Button></td>
 						</tr>
 					</tbody>
 				</Table>
-				<Button className="me-3" onClick={function routePaciente() { window.location.href = "/AdministracionTratamientosAdd" }}>Añadir nuevo doctor</Button>
+				<Button className="me-3" onClick={function routePaciente() { window.location.href = "/AdministracionTratamientosAdd" }}>Añadir nuevo tratamiento</Button>
 				<Button className="me-3" onClick={function back(){window.location.href = "/Administracion"}}>Volver</Button>
 			</div>
 		</div>
