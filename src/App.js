@@ -15,6 +15,7 @@ import PacienteHistoEvolucion from './pages/home/home-pages/home-pages-paciente/
 import PacienteHistoEvolucionVista from './pages/home/home-pages/home-pages-paciente/PacienteHistoEvolucionVista';
 import PacienteHistoEvolucionAdd from './pages/home/home-pages/home-pages-paciente/PacienteHistoEvolucionAdd';
 import PacienteHistoImagenes from './pages/home/home-pages/home-pages-paciente/PacienteHistoImagenes';
+import PacienteHistoImagenesAdd from './pages/home/home-pages/home-pages-paciente/PacienteHistoImagenesAdd';
 import PacienteHistoOdonto from './pages/home/home-pages/home-pages-paciente/PacienteHistoOdonto';
 import PacienteHistoOdontoAc from './pages/home/home-pages/home-pages-paciente/PacienteHistoOdontoAc';
 import PacienteHistoReceta from './pages/home/home-pages/home-pages-paciente/PacienteHistoReceta';
@@ -50,6 +51,7 @@ export default function App() {
 				<Route path='/PacienteHistoEvolucionVista' element={<PacienteHistoEvolucionVista />}/>
 				<Route path='/PacienteHistoEvolucionAdd' element={<PacienteHistoEvolucionAdd />}/>
 				<Route path='/PacienteHistoImagenes' element={<PacienteHistoImagenes />} />
+				<Route path='/PacienteHistoImagenesAdd' element={<PacienteHistoImagenesAdd />} />
 				<Route path='/PacienteHistoOdonto' element={<PacienteHistoOdonto />} />
 				<Route path='/PacienteHistoOdontoAc' element={<PacienteHistoOdontoAc />} />
 				<Route path='/PacienteHistoReceta' element={<PacienteHistoReceta />} />
