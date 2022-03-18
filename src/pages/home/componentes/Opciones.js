@@ -21,11 +21,11 @@ const Opciones = () => {
 			</DropdownToggle>
 			<DropdownMenu className="menudemenu">
 			    <DropdownItem header>Historiales</DropdownItem>
-			    <DropdownItem className="itemsM"><NavLink   to="/PacienteHistoHistoriales1" exact className="py-2 w-100 d-inline-block px-2">Historial Clínico Completo</NavLink></DropdownItem>
-			    <DropdownItem className="itemsM"><NavLink   to="/PacienteHistoHistoriales2" exact className="py-2 w-100 d-inline-block px-2">Historial Clínico Ortodoncia</NavLink></DropdownItem>
-			    <DropdownItem className="itemsM"><NavLink   to="/PacienteHistoHistoriales3" exact className="py-2 w-100 d-inline-block px-2">Historial Clínico Odontopediatría</NavLink></DropdownItem>
-			    <DropdownItem className="itemsM"><NavLink   to="/PacienteHistoHistoriales4" exact className="py-2 w-100 d-inline-block px-2">Historial Clínico Endodoncia</NavLink></DropdownItem>
-			    <DropdownItem className="itemsM"><NavLink   to="/PacienteHistoHistoriales5" exact className="py-2 w-100 d-inline-block px-2">Historial Clínico General</NavLink></DropdownItem>
+			    <DropdownItem className="itemsM"><NavLink   to="/PacienteHistoHistoriales1" exact className="py-2 w-100 d-inline-block px-2">Rehabilitacion oral</NavLink></DropdownItem>
+			    <DropdownItem className="itemsM"><NavLink   to="/PacienteHistoHistoriales2" exact className="py-2 w-100 d-inline-block px-2">Ortodoncia</NavLink></DropdownItem>
+			    <DropdownItem className="itemsM"><NavLink   to="/PacienteHistoHistoriales3" exact className="py-2 w-100 d-inline-block px-2">Odontopediatría</NavLink></DropdownItem>
+			    <DropdownItem className="itemsM"><NavLink   to="/PacienteHistoHistoriales4" exact className="py-2 w-100 d-inline-block px-2">Endodoncia</NavLink></DropdownItem>
+			    <DropdownItem className="itemsM"><NavLink   to="/PacienteHistoHistoriales5" exact className="py-2 w-100 d-inline-block px-2">Odontologia General</NavLink></DropdownItem>
 
 			</DropdownMenu>
 		    </Dropdown>

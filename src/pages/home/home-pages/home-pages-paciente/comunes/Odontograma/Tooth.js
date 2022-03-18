@@ -72,13 +72,17 @@ function Tooth({ number, positionX, positionY, onChange, initialState = {
 			'Todas Caries': () => dispatch(carie('all', value)),
 			'Ausente': () => dispatch(extract(value)),
 			'Corona': () => dispatch(crown(value)),
+			'Filtrado': () => dispatch(filter(value)),
+			'Fracturado': () => dispatch(fracture(value)),
 		}
 	}
 
 	// Todo SubMenu
 	const todoSubMenu = (place, value) => {
 		return {
-			'Caries': () => dispatch(carie(place, value)),
+			'Caries': () => {
+				dispatch(carie(place, value)); 
+			},
 			'Todas Caries': () => dispatch(carie('all', value)),
 			'Ausente': () => dispatch(extract(value)),
 			'Corona': () => dispatch(crown(value)),
@@ -181,21 +185,21 @@ function Tooth({ number, positionX, positionY, onChange, initialState = {
 	function drawToothActions() {
 		let otherFigures = null;
 		if (toothState.Extract > 0) {
-			otherFigures = <g stroke={toothState.Extract === 1 ? "red" : "blue"}>
-				<line x1="0" y1="0" x2="20" y2="20" strokeWidth="2" />
-				<line x1="0" y1="20" x2="20" y2="0" strokeWidth="2" />
+			otherFigures = <g stroke={toothState.Extract === 1 ? "#08b4ff" : "#2a2b28"}>
+				<line x1="0" y1="0" x2="20" y2="20" strokeWidth="1.5" />
+				<line x1="0" y1="20" x2="20" y2="0" strokeWidth="1.5" />
 			</g>
 		}
 
 		if (toothState.Fracture > 0) {
-			otherFigures = <g stroke={toothState.Fracture === 1 ? "red" : "blue"}>
-				<line x1="0" y1="10" x2="20" y2="10" strokeWidth="2"></line>
+			otherFigures = <g stroke={toothState.Fracture === 1 ? "#08b4ff" : "#2a2b28"}>
+				<line x1="0" y1="10" x2="20" y2="10" strokeWidth="1.5"></line>
 			</g>
 		}
 
 		if (toothState.Filter > 0) {
-			otherFigures = <g stroke={toothState.Fracture === 1 ? "red" : "blue"}>
-				<line x1="0" y1="20" x2="20" y2="0" strokeWidth="2" />
+			otherFigures = <g stroke={toothState.Filter === 1 ? "#08b4ff" : "#2a2b28"}>
+				<line x1="0" y1="20" x2="20" y2="0" strokeWidth="1.5" />
 			</g>
 		}
 
@@ -203,10 +207,10 @@ function Tooth({ number, positionX, positionY, onChange, initialState = {
 			otherFigures = <circle
 				cx="10"
 				cy="10"
-				r="10"
+				r="9"
 				fill="none"
-				stroke={toothState.Crown === 1 ? "red" : "blue"}
-				strokeWidth="2"
+				stroke={toothState.Crown === 1 ? "#08b4ff" : "#2a2b28"}
+				strokeWidth="1.5"
 			/>;
 		}
 

@@ -23,7 +23,7 @@ const sidebar = () => {
 				<br></br><br></br>
 				<li><NavLink to="/PacienteHisto" exact className="py-2 w-100 d-inline-block px-2" activeClassname="active"><AiOutlineUser className="me-2" />Paciente</NavLink></li>
 				<li className="chiloLi"><Menu /></li>
-				<li className="chiloLi"><MenuOdo /></li>
+				<li><NavLink to="/PacienteHistoOdonto" exact className="py-2 w-100 d-inline-block px-2" activeClassname="active"><AiOutlineReconciliation className="me-2" />Odontograma</NavLink></li>
 				<li><NavLink to="/PacienteHistoEvolucion" exact className="py-2 w-100 d-inline-block px-2" activeClassname="active"><AiOutlineSmile className="me-2" />Evolucion</NavLink></li>
 				<li><NavLink to="/PacienteHistoImagenes" exact className="py-2 w-100 d-inline-block px-2" activeClassname="active"><AiOutlinePicture className="me-2" />Imagenes</NavLink></li>
 				<li><NavLink to="/PacienteHistoReceta" exact className="py-2 w-100 d-inline-block px-2" activeClassname="active"><AiOutlineFile className="me-2" />Receta</NavLink></li>

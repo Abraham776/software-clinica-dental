@@ -1,14 +1,16 @@
 svg.tooth {
     cursor: pointer;
     fill: white;
+    
   }
   
   svg.tooth .to-do {
-    fill: red;
+
+    fill: #b1e26a;
   }
   
   svg.tooth .done {
-    fill: blue;
+    fill: #f2e980;
   }
   
   svg.tooth .active {
