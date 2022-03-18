@@ -21,3 +21,7 @@ Reactrap | npm install reactstrap react react-dom | https://reactstrap.github.io
 icons | npm install react-icons --save | https://react-icons.github.io/react-icons
 
 Scss | npm install -s node-sass | https://www.better.dev/adding-sass-to-create-react-app
+
+react-to-print | npm i --save react-to-print | https://www.npmjs.com/package/react-to-print
+
+react-pdf | npm i --save react-pdf | https://www.npmjs.com/package/react-pdf
