@@ -19,6 +19,7 @@ import PacienteHistoImagenesAdd from './pages/home/home-pages/home-pages-pacient
 import PacienteHistoOdonto from './pages/home/home-pages/home-pages-paciente/PacienteHistoOdonto';
 import PacienteHistoOdontoAc from './pages/home/home-pages/home-pages-paciente/PacienteHistoOdontoAc';
 import PacienteHistoReceta from './pages/home/home-pages/home-pages-paciente/PacienteHistoReceta';
+import PacienteHistoRecetaAdd from './pages/home/home-pages/home-pages-paciente/PacienteHistoRecetaAdd';
 import PacienteHistoHistoriales1 from './pages/home/home-pages/home-pages-paciente/comunes/PacienteHistoHistoriales1';
 import PacienteHistoHistoriales2 from './pages/home/home-pages/home-pages-paciente/comunes/PacienteHistoHistoriales2';
 import PacienteHistoHistoriales3 from './pages/home/home-pages/home-pages-paciente/comunes/PacienteHistoHistoriales3';
@@ -55,6 +56,7 @@ export default function App() {
 				<Route path='/PacienteHistoOdonto' element={<PacienteHistoOdonto />} />
 				<Route path='/PacienteHistoOdontoAc' element={<PacienteHistoOdontoAc />} />
 				<Route path='/PacienteHistoReceta' element={<PacienteHistoReceta />} />
+				<Route path='/PacienteHistoRecetaAdd' element={<PacienteHistoRecetaAdd />}/>
 				<Route path='/PacienteHistoHistoriales1' element={<PacienteHistoHistoriales1 />} />
 				<Route path='/PacienteHistoHistoriales2' element={<PacienteHistoHistoriales2 />} />
 				<Route path='/PacienteHistoHistoriales3' element={<PacienteHistoHistoriales3 />} />
