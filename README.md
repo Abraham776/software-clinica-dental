@@ -25,3 +25,5 @@ Scss | npm install -s node-sass | https://www.better.dev/adding-sass-to-create-r
 react-to-print | npm i --save react-to-print | https://www.npmjs.com/package/react-to-print
 
 react-pdf | npm i --save react-pdf | https://www.npmjs.com/package/react-pdf
+
+recharts | npm i recharts | https://github.com/recharts/recharts
