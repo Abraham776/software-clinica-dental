@@ -81,7 +81,7 @@ function Tooth({ number, positionX, positionY, onChange, initialState = {
 	const todoSubMenu = (place, value) => {
 		return {
 			'Caries': () => {
-				dispatch(carie(place, value)); 
+				dispatch(carie(place, value));
 			},
 			'Todas Caries': () => dispatch(carie('all', value)),
 			'Ausente': () => dispatch(extract(value)),
@@ -146,7 +146,10 @@ function Tooth({ number, positionX, positionY, onChange, initialState = {
 					onContextMenu={useCM(menuConfig('center'))}
 					className={getClassNamesByZone('center')}
 				/>
-				{drawToothActions()}
+				{drawFracture()}
+				{drawExtract()}
+				{drawCrown()}
+				{drawFilter()}
 				<text
 					x="6"
 					y="30"
@@ -182,27 +185,26 @@ function Tooth({ number, positionX, positionY, onChange, initialState = {
 	}
 
 	//Función para dibujar los estados especiales del diente
-	function drawToothActions() {
+	function drawFracture(){
 		let otherFigures = null;
-		if (toothState.Extract > 0) {
-			otherFigures = <g stroke={toothState.Extract === 1 ? "#08b4ff" : "#2a2b28"}>
-				<line x1="0" y1="0" x2="20" y2="20" strokeWidth="1.5" />
-				<line x1="0" y1="20" x2="20" y2="0" strokeWidth="1.5" />
-			</g>
-		}
-
 		if (toothState.Fracture > 0) {
 			otherFigures = <g stroke={toothState.Fracture === 1 ? "#08b4ff" : "#2a2b28"}>
 				<line x1="0" y1="10" x2="20" y2="10" strokeWidth="1.5"></line>
 			</g>
 		}
-
+		return otherFigures;
+	}
+	function drawFilter(){ 
+		let otherFigures = null;
 		if (toothState.Filter > 0) {
 			otherFigures = <g stroke={toothState.Filter === 1 ? "#08b4ff" : "#2a2b28"}>
 				<line x1="0" y1="20" x2="20" y2="0" strokeWidth="1.5" />
 			</g>
 		}
-
+		return otherFigures;
+	}
+	function drawCrown(){ 
+		let otherFigures = null;
 		if (toothState.Crown > 0) {
 			otherFigures = <circle
 				cx="10"
@@ -213,7 +215,17 @@ function Tooth({ number, positionX, positionY, onChange, initialState = {
 				strokeWidth="1.5"
 			/>;
 		}
-
+		return otherFigures;
+	}
+	function drawExtract() {
+		let otherFigures = null;
+		if (toothState.Extract > 0) {
+			otherFigures =
+				<g stroke={toothState.Extract === 1 ? "#08b4ff" : "#2a2b28"}>
+					<line x1="0" y1="0" x2="20" y2="20" strokeWidth="1.5" />
+					<line x1="0" y1="20" x2="20" y2="0" strokeWidth="1.5" />
+				</g>;
+		}
 		return otherFigures;
 	}
 }
