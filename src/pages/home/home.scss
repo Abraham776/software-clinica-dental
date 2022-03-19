@@ -22,6 +22,14 @@ html, body {
 	margin-left: 250px;
 	padding-top: 10px;
 }
+#first {
+    float:left;
+	padding: 50px;
+}
+#second {
+    overflow: hidden;
+	padding: 50px;
+}
 * {
 	margin: 0;
 	padding: 0;
