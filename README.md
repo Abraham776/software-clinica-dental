@@ -29,3 +29,5 @@ react-pdf | npm i --save react-pdf | https://www.npmjs.com/package/react-pdf
 recharts | npm i recharts | https://github.com/recharts/recharts
 
 mysql | npm i mysql | https://www.npmjs.com/package/mysql
+
+inquirer | npm i inquirer | https://www.npmjs.com/package/inquirer
