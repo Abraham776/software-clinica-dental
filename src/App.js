@@ -46,24 +46,24 @@ export default function App() {
 				<Route path='/AdministracionTratamientosAdd' element={<AdministracionTratamientosAdd />} />
 				<Route path='/AdministracionTratamientosVista' element={<AdministracionTratamientosVista />} />
 				<Route path='/PacienteHisto/:id' element={<PacienteHisto/>} />
-				<Route path='/PacienteHistoConse' element={<PacienteHistoConse />} />
-				<Route path='/PacienteHistoEvolucion' element={<PacienteHistoEvolucion />} />
-				<Route path='/PacienteHistoEvolucionVista' element={<PacienteHistoEvolucionVista />}/>
-				<Route path='/PacienteHistoEvolucionAdd' element={<PacienteHistoEvolucionAdd />}/>
-				<Route path='/PacienteHistoImagenes' element={<PacienteHistoImagenes />} />
-				<Route path='/PacienteHistoImagenesAdd' element={<PacienteHistoImagenesAdd />} />
-				<Route path='/PacienteHistoOdonto' element={<PacienteHistoOdonto />} />
-				<Route path='/PacienteHistoReceta' element={<PacienteHistoReceta />} />
-				<Route path='/PacienteHistoRecetaAdd' element={<PacienteHistoRecetaAdd />}/>
-				<Route path='/PacienteHistoHistoriales1' element={<PacienteHistoHistoriales1 />} />
-				<Route path='/PacienteHistoHistoriales2' element={<PacienteHistoHistoriales2 />} />
-				<Route path='/PacienteHistoHistoriales3' element={<PacienteHistoHistoriales3 />} />
-				<Route path='/PacienteHistoHistoriales4' element={<PacienteHistoHistoriales4 />} />
-				<Route path='/PacienteHistoHistoriales5' element={<PacienteHistoHistoriales5 />} />
-				<Route path='/NuevoHistorialOrt' element={<NuevoHistorialOrt/>}/>
-				<Route path='/NuevoHistorialOdon' element={<NuevoHistorialOdon/>}/>
-				<Route path='/NuevoHistorialEndo' element={<NuevoHistorialEndo/>}/>
-				<Route path='/NuevoHistorialGeneral' element={<NuevoHistorialGeneral/>}/>
+				<Route path='/PacienteHistoConse/:id' element={<PacienteHistoConse />} />
+				<Route path='/PacienteHistoEvolucion/:id' element={<PacienteHistoEvolucion />} />
+				<Route path='/PacienteHistoEvolucionVista/:id' element={<PacienteHistoEvolucionVista />}/>
+				<Route path='/PacienteHistoEvolucionAdd/:id' element={<PacienteHistoEvolucionAdd />}/>
+				<Route path='/PacienteHistoImagenes/:id' element={<PacienteHistoImagenes />} />
+				<Route path='/PacienteHistoImagenesAdd/:id' element={<PacienteHistoImagenesAdd />} />
+				<Route path='/PacienteHistoOdonto/:id' element={<PacienteHistoOdonto />} />
+				<Route path='/PacienteHistoReceta/:id' element={<PacienteHistoReceta />} />
+				<Route path='/PacienteHistoRecetaAdd/:id' element={<PacienteHistoRecetaAdd />}/>
+				<Route path='/PacienteHistoHistoriales1/:id' element={<PacienteHistoHistoriales1 />} />
+				<Route path='/PacienteHistoHistoriales2/:id' element={<PacienteHistoHistoriales2 />} />
+				<Route path='/PacienteHistoHistoriales3/:id' element={<PacienteHistoHistoriales3 />} />
+				<Route path='/PacienteHistoHistoriales4/:id' element={<PacienteHistoHistoriales4 />} />
+				<Route path='/PacienteHistoHistoriales5/:id' element={<PacienteHistoHistoriales5 />} />
+				<Route path='/NuevoHistorialOrt/:id' element={<NuevoHistorialOrt/>}/>
+				<Route path='/NuevoHistorialOdon/:id' element={<NuevoHistorialOdon/>}/>
+				<Route path='/NuevoHistorialEndo/:id' element={<NuevoHistorialEndo/>}/>
+				<Route path='/NuevoHistorialGeneral/:id' element={<NuevoHistorialGeneral/>}/>
 			</Routes>
 		</BrowserRouter>
 	);
