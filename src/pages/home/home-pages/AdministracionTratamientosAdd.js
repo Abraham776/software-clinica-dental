@@ -1,7 +1,6 @@
 // Sánchez Plazola José Abraham
 // 11/03/2022
 // Componente para añadir tratamientos a la base de datos de la clinica
-
 import React from "react";
 import { Button, Label, Form, FormGroup, Col, Input} from "reactstrap";
 import Sidebar from "../componentes/sidebar";

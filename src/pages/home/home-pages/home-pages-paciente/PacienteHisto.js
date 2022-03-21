@@ -2,12 +2,32 @@
 // 	11/03/2022
 //	Añadida vistas de inputs
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Col, Form, FormGroup, Input, Label } from "reactstrap";
 import Sidebar from "../../componentes/sidebarP";
 import "../../home.scss";
+import PacientesDataService from "../../../../services/pacientes";
 
 const PacienteHisto = () => {
+
+	var id = window.location.href;
+	id = id.slice(id.lastIndexOf("/") + 1);
+
+	const [pacientes, setPacientes] = useState([]);
+	const dataService = new PacientesDataService();
+
+	useEffect(() => {
+		dataService.get(id)
+			.then(response => {
+				setPacientes(response.data);
+			})
+			.catch(err => {
+				console.log(err);
+			});
+	}, []);
+
+	console.log(pacientes);
+
 	return (
 		<div className="home-contenido">
 			<Sidebar />
