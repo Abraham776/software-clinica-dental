@@ -7,9 +7,12 @@ import Sidebar from "../../componentes/sidebarP";
 import "../../home.scss";
 
 const PacienteHistoReceta = () => {
+	var id = window.location.href;
+	id = id.slice(id.lastIndexOf("/") + 1);
+
 	return (
 		<div className="home-contenido">
-			<Sidebar />
+			<Sidebar id={id}/>
 			<div className="form-inputs">
 				<Table bordered hover responsive striped>
 					<thead>
@@ -27,7 +30,7 @@ const PacienteHistoReceta = () => {
 						</tr>
 					</tbody>
 				</Table>
-				<Button onClick={function routePaciente() { window.location.href = "/PacienteHistoRecetaAdd" }}>Añadir nueva receta</Button>
+				<Button onClick={function routePaciente() { window.location.href = `/PacienteHistoRecetaAdd/${id}` }}>Añadir nueva receta</Button>
 			</div>
 		</div>
 	)

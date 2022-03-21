@@ -13,6 +13,8 @@ const PacienteHisto = () => {
 	var id = window.location.href;
 	id = id.slice(id.lastIndexOf("/") + 1);
 
+	console.log({id});
+
 	const [pacientes, setPacientes] = useState([]);
 	const dataService = new PacientesDataService();
 
@@ -30,7 +32,7 @@ const PacienteHisto = () => {
 
 	return (
 		<div className="home-contenido">
-			<Sidebar />
+			<Sidebar id={id}/>
 			<div className="form-inputs">
 				<Form inline>
 					<FormGroup row>

@@ -7,9 +7,11 @@ import Sidebar from "../../componentes/sidebarP";
 import "../../home.scss";
 
 const PacienteHistoImagenes = () => {
+	var id = window.location.href;
+	id = id.slice(id.lastIndexOf("/") + 1);
 	return (
 		<div className="home-contenido">
-			<Sidebar />
+			<Sidebar id={id}/>
 			<div className="img-paciente">
 				<CardGroup>
 					<Card>
@@ -25,7 +27,7 @@ const PacienteHistoImagenes = () => {
 					</Card>
 				</CardGroup>
 				<br/>
-				<Button onClick={function (){window.location.href = "/PacienteHistoImagenesAdd"}}>Añadir nueva imagen</Button>
+				<Button onClick={function (){window.location.href = `/PacienteHistoImagenesAdd/${id}`}}>Añadir nueva imagen</Button>
 			</div>
 		</div>
 	)

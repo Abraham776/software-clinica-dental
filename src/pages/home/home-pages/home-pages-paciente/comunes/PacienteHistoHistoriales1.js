@@ -4,33 +4,16 @@ import Sidebar from "../../../componentes/sidebarP";
 import "../../../home.scss";
 
 const PacienteHistoHistoriales1 = () => {
-
-    
-
-    return(
-        
-        
-        
-            <div className="home-contenido">
-             
-            <Sidebar/>
-                
-                <div className="contenido-in-historiales">
-                
-                Historiales 1
-
-            </div>
-                
-    
-    
-            </div>
-    
-    
-       
-
-    )
-
-
+	var id = window.location.href;
+	id = id.slice(id.lastIndexOf("/") + 1);
+	return (
+		<div className="home-contenido">
+			<Sidebar id={id}/>
+			<div className="contenido-in-historiales">
+				Historiales 1
+			</div>
+		</div>
+	)
 };
 
 

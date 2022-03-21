@@ -10,6 +10,8 @@ import { useReactToPrint } from "react-to-print";
 import { Button } from "reactstrap";
 
 const PacienteHistoConse = () => {
+	var id = window.location.href;
+	id = id.slice(id.lastIndexOf("/") + 1);
 	const componentRef = useRef();
 	const handlePrint = useReactToPrint({
 		content: () => componentRef.current
@@ -17,7 +19,7 @@ const PacienteHistoConse = () => {
 
 	return (
 		<div className="home-contenido">
-			<Sidebar />
+			<Sidebar id={id}/>
 			<div className="form-inputs">
 				<Button
 					onClick={handlePrint}

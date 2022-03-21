@@ -4,6 +4,8 @@ import "../../home.scss";
 import Odontogram from './comunes/Odontograma/Odontogram';
 
 const PacienteHistoOdonto = () => {
+	var id = window.location.href;
+	id = id.slice(id.lastIndexOf("/") + 1);
 	const string = `{
         "16": {
             "Cavities": {
@@ -87,29 +89,14 @@ const PacienteHistoOdonto = () => {
 
 
 	return (
-
-
-
 		<div className="home-contenido">
-
-
-
-
-			<Sidebar />
+			<Sidebar id = {id}/>
 			<div className="contenido-in">
-			
+
 			</div>
 			<Odontogram data={separateData(JSON.parse(string))} />
-
-
 		</div>
-
-
-
-
 	)
-
-
 };
 
 export default PacienteHistoOdonto;

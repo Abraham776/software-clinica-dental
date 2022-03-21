@@ -8,9 +8,11 @@ import Sidebar from "../../componentes/sidebarP";
 import "../../home.scss";
 
 const PacienteHistoEvolucion = () => {
+	var id = window.location.href;
+	id = id.slice(id.lastIndexOf("/") + 1);
 	return (
 		<div className="home-contenido">
-			<Sidebar />
+			<Sidebar id={id}/>
 			<div className="form-inputs">
 				<Table bordered hover responsive striped>
 					<thead>
