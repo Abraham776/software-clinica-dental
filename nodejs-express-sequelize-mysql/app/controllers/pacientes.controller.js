@@ -67,17 +67,47 @@ exports.findOne = (req, res) => {
 };
 
 exports.update = (req, res) => {
-
+	const id = req.params.id;
+	pacientes.update(req.body, {
+		where: {idPaciente:id}
+	})
+		.then(num => {
+			if(num == 1) {
+				res.send({
+					message: "Paciente fue actualizado con exito"
+				});
+			} else {
+				res.send({
+					message: `No se puede actualizar el paciente con id = ${id}`
+				});
+			}
+		})
+		.catch(err => {
+			res.status(500).send({
+				message: `Error al actualizar el paciente con id = ${id}. Error = ${err}`
+			});
+		})
 };
 
 exports.delete = (req, res) => {
-
-};
-
-exports.deleteAll = (req, res) => {
-
-};
-
-exports.findAllPublished = (req, res) => {
-
+	const id = req.params.id;
+	pacientes.destroy({
+		where: {idPaciente:id}
+	})
+		.then(num => {
+			if(num == 1){
+				res.send({ 
+					message: "Paciente fue borrado exitosamente"
+				});
+			} else {
+				res.send({ 
+					message: `No se puede borrar el paciente con con id = ${id}`
+				});
+			}
+		})
+		.catch(err => {
+			res.status(500).send({ 
+				message: `Error al borrar el paciente con id = ${id}. Error = ${err}`
+			})
+		})
 };
