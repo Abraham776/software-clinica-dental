@@ -29,7 +29,7 @@ import NuevoHistorialOdon from './pages/home/home-pages/home-pages-paciente/comu
 import NuevoHistorialEndo from './pages/home/home-pages/home-pages-paciente/comunes/NuevoHistorialEndo';
 import NuevoHistorialGeneral from './pages/home/home-pages/home-pages-paciente/comunes/NuevoHistorialGeneral';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
+//dghfhgfhg
 export default function App() {
 	return (
 		<BrowserRouter>
