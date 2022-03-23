@@ -4,7 +4,7 @@ module.exports = app => {
 	
 	router.post("/", paciente.create);
 
-	router.delete("/", paciente.delete);
+	router.delete("/:id", paciente.delete);
 
 	router.put("/:id", paciente.update);
 	

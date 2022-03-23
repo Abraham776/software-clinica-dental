@@ -23,13 +23,43 @@ const Paciente = () => {
 			});
 	}, []);
 
+	function confirmAction() {
+		let confirmAction = window.confirm("¿Está seguro de querer borrar este registro? Esta acción es irreversible");
+		return confirmAction;
+	}
+
 	const list = pacientes.map(paciente => {
 		return (
 			<tr>
 				<td> {paciente.NombrePaciente} </td>
 				<td> {paciente.CelularPaciente} </td>
 				<td><Button block onClick={function routePaciente() { window.location.href = `/PacienteHisto/${paciente.idPaciente}` }}>Ingresar</Button></td>
-				<td><Button block color="danger">Eliminar</Button></td>
+				<td><Button block color="danger" onClick={function deletePaciente() {
+
+					let response = confirmAction();
+					if(!response){
+						window.alert("Acción cancelada");
+						return;
+					}
+
+					dataService.delete(paciente.idPaciente)
+						.then(response => {
+							console.log(response.data);
+							const index = pacientes.map(dat => {
+								return dat.idPaciente === paciente.idPaciente
+							})
+							pacientes.splice(index, 1)
+							var newData = [];
+							Object.assign(newData, pacientes);
+							setPacientes(newData);
+							window.alert("Registro borrado exitosamente");
+							// this.props.history.push('/tutorials')
+						})
+						.catch(e => {
+							console.log(e);
+							window.alert("Fallo al borrar registro");
+						});
+				}}>Eliminar</Button></td>
 			</tr>
 		)
 	})
