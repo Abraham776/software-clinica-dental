@@ -65,15 +65,7 @@ const AgendaCita = () => {
 							<Input type="date" name="FechaCitas" id="fechaField" />
 						</Col>
 						<Label for="paciente">Paciente</Label>
-						<Input type="select" name="NombreDelPacienteCitas" id="pacienteField" onChange={(function onChange(e){
-								const NombreDelPacienteCitas = e.target.value;
-								setPacientes(function(prevState){
-									return {
-										...prevState.pacientes,
-										NombrePaciente: NombreDelPacienteCitas,
-									}
-								})
-							})}>
+						<Input type="select" name="NombreDelPacienteCitas" id="pacienteField" >
 							{list}
 						</Input>
 					</FormGroup>
