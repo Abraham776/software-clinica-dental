@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Document, Page } from "react-pdf";
+import { Document, Page } from 	"react-pdf/dist/esm/entry.webpack5";
 
 const LoadPdf = React.forwardRef((props, ref) => {
 	const [numPages, setNumPages] = useState(null);

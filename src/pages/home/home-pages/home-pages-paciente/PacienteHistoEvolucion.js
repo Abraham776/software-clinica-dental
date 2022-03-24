@@ -27,12 +27,12 @@ const PacienteHistoEvolucion = () => {
 						<tr>
 							<td> 05/02/2022 </td>
 							<td> Extracción </td>
-							<td><Button block onClick={function routePaciente() { window.location.href = "/PacienteHistoEvolucionVista" }}>Editar</Button></td>
+							<td><Button block onClick={function routePaciente() { window.location.href = "/PacienteHistoEvolucionVista/${id}" }}>Editar</Button></td>
 							<td><Button block color="danger">Eliminar</Button></td>
 						</tr>
 					</tbody>
 				</Table>
-				<Button onClick={function routePaciente() { window.location.href = "/PacienteHistoEvolucionAdd" }}>Añadir nuevo registro</Button>
+				<Button onClick={function routePaciente() { window.location.href = "/PacienteHistoEvolucionAdd/${id}" }}>Añadir nuevo registro</Button>
 			</div>
 		</div>
 	)

@@ -2,38 +2,11 @@ import React from "react";
 import Sidebar from "../../componentes/sidebarP";
 import "../../home.scss";
 import Odontogram from './comunes/Odontograma/Odontogram';
+import { Button, Col, Form, FormGroup, Input, Label } from "reactstrap";
 
 const PacienteHistoOdonto = () => {
 	var id = window.location.href;
 	id = id.slice(id.lastIndexOf("/") + 1);
-	const string = `{
-        "16": {
-            "Cavities": {
-                "center": 0,
-                "top": 0,
-                "bottom": 0,
-                "left": 0,
-                "right": 0
-            },
-            "Extract": 0,
-            "Crown": 0,
-            "Filter": 0,
-            "Fracture": 2
-        },
-        "17": {
-            "Cavities": {
-                "center": 2,
-                "top": 2,
-                "bottom": 2,
-                "left": 2,
-                "right": 2
-            },
-            "Extract": 0,
-            "Crown": 0,
-            "Filter": 0,
-            "Fracture": 0
-        }
-    }`
 
 	//	Función para separar los datos cargados en las filas de dientes del odontograma
 	// 	data: JSON con keys iguales a los numeros de cada diente y valores de caries y otras operaciones del dentista
@@ -92,9 +65,10 @@ const PacienteHistoOdonto = () => {
 		<div className="home-contenido">
 			<Sidebar id = {id}/>
 			<div className="contenido-in">
-
+			
 			</div>
-			<Odontogram data={separateData(JSON.parse(string))} />
+				
+			<Odontogram/>
 		</div>
 	)
 };

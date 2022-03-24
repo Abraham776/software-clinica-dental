@@ -5,9 +5,11 @@
 import React from 'react';
 import './Odontogram.css';
 import Teeth from './Teeth';
+import { Button, Col, Form, FormGroup, Input, Label } from "reactstrap";
 
 //Componente odontograma, renderiza finalmente todas las filas de dientes
 function Odontogram({ data = [] }) {
+
 	//OdontogramState recolecta el estado de cada diente del odontograma
 	let odontogramState = {};
 
@@ -60,6 +62,7 @@ function Odontogram({ data = [] }) {
 				<svg version="1.1" viewBox='-100 -100 1000 400' width="100%">
 					{teethArr}
 				</svg>
+				<Button name="form">Guardar</Button>
 			</div>
 		</>
 	);

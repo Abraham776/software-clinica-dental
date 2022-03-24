@@ -48,7 +48,7 @@ const AgendaCita = () => {
 		return (
 			<option>{paciente.NombrePaciente}</option>
 		)
-	})
+	});
 
 	return (
 		<div className="home-contenido">
