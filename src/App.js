@@ -44,7 +44,7 @@ export default function App() {
 				<Route path='/administraciontratamientos' element={<AdministracionTratamientos/>} />
 				<Route path='/AdministracionDoctoresAdd' element={<AdministracionDoctoresAdd />} />
 				<Route path='/AdministracionTratamientosAdd' element={<AdministracionTratamientosAdd />} />
-				<Route path='/AdministracionTratamientosVista' element={<AdministracionTratamientosVista />} />
+				<Route path='/AdministracionTratamientosVista/:id' element={<AdministracionTratamientosVista />} />
 				<Route path='/PacienteHisto/:id' element={<PacienteHisto/>} />
 				<Route path='/PacienteHistoConse/:id' element={<PacienteHistoConse />} />
 				<Route path='/PacienteHistoEvolucion/:id' element={<PacienteHistoEvolucion />} />
