@@ -24,6 +24,9 @@ require("./app/routes/pacientes.routes")(app);
 require("./app/routes/citas.routes")(app);
 require("./app/routes/doctor.routes")(app);
 require("./app/routes/tratamiento.routes")(app);
+require("./app/routes/evolucion.routes")(app);
+require("./app/routes/imagenes.routes")(app);
+require("./app/routes/odontograma.routes")(app);
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

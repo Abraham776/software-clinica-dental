@@ -1,41 +1,43 @@
 const db = require("../models");
-const odontogramafull = require("../models/odontograma");
-const odontograma = db.models.odontograma;
+const evolucionfull = require("../models/registroevolucion");
+const evolucion = db.models.registroevolucion;
 const Op = db.Sequelize.Op;
 
 exports.create = (req, res) => {
 	const datos = {
-		idOdontograma: req.body.idOdontograma,
-		JsonOdontograma: req.body.JsonOdontograma,
-		Paciente_idPaciente: req.body.Paciente_idPaciente
+		idRegistroEvolucion: req.body.idRegistroEvolucion,
+		ObservacionesRegistro: req.body.ObservacionesRegistro,
+		FechaRegistro: req.body.FechaRegistro,
+        Tratamiento: req.body.Tratamiento,
+        Paciente_idPaciente: req.body.Paciente_idPaciente
 	}
 
-	odontograma.create(datos)
+	evolucion.create(datos)
 		.then(data => {
 			res.send(data);
 		})
 		.catch(err => {
 			res.status(500).send({
-				message: err.message || "Pasó un error al crear el odontograma"
+				message: err.message || "Pasó un error al crear el registro"
 			})
 		})
 };
 
 exports.findAll = (req, res) => {
-	odontograma.findAll()
+	evolucion.findAll()
 		.then(data => {
 			res.send(data);
 		})
 		.catch(err => {
 			res.status(500).send({
-				message: err.message || "Pasó un error al retirar el odontograma"
+				message: err.message || "Pasó un error al retirar el registro"
 			});
 		});
 };
 
 exports.findOne = (req, res) => {
 	const id = req.params.id;
-	odontograma.findByPk(id)
+	evolucion.findByPk(id)
 		.then(data => {
 			if (data) {
 				res.send(data);
@@ -54,46 +56,46 @@ exports.findOne = (req, res) => {
 
 exports.update = (req, res) => {
 	const id = req.params.id;
-	odontograma.update(req.body, {
-		where: {idOdontograma:id}
+	evolucion.update(req.body, {
+		where: {idRegistroEvolucion:id}
 	})
 		.then(num => {
 			if(num == 1) {
 				res.send({
-					message: "odontograma fue actualizado con exito"
+					message: "registro fue actualizado con exito"
 				});
 			} else {
 				res.send({
-					message: `No se puede actualizar el odonntograma con id = ${id}`
+					message: `No se puede actualizar el registro con id = ${id}`
 				});
 			}
 		})
 		.catch(err => {
 			res.status(500).send({
-				message: `Error al actualizar el odontograma con id = ${id}. Error = ${err}`
+				message: `Error al actualizar el registro con id = ${id}. Error = ${err}`
 			});
 		})
 };
 
 exports.delete = (req, res) => {
 	const id = req.params.id;
-	citas.destroy({
-		where: {idOdontograma:id}
+	evolucion.destroy({
+		where: {idRegistroEvolucion:id}
 	})
 		.then(num => {
 			if(num == 1){
 				res.send({ 
-					message: "odontograma fue borrado exitosamente"
+					message: "registro fue borrad0 exitosamente"
 				});
 			} else {
 				res.send({ 
-					message: `No se puede borrar el odontograma con con id = ${id}`
+					message: `No se puede borrar el registro con con id = ${id}`
 				});
 			}
 		})
 		.catch(err => {
 			res.status(500).send({ 
-				message: `Error al borrar el odontograma con id = ${id}. Error = ${err}`
+				message: `Error al borrar el registro con id = ${id}. Error = ${err}`
 			})
 		})
 };

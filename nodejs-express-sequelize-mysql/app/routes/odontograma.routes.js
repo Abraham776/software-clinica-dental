@@ -1,5 +1,5 @@
 module.exports = app => {
-	const cita = require("../controllers/odontograma.controller.js");
+	const odontograma = require("../controllers/odontograma.controller.js");
 	var router = require("express").Router();
 	
 	router.post("/", odontograma.create);
