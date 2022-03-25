@@ -54,7 +54,6 @@ const Paciente = () => {
 							Object.assign(newData, pacientes);
 							setPacientes(newData);
 							window.alert("Registro borrado exitosamente");
-							// this.props.history.push('/tutorials')
 						})
 						.catch(e => {
 							console.log(e);
