@@ -1,7 +1,7 @@
 import http from '../http-common';
 class evolucionDataService {
-	getAll() { 
-		return http.get("/evolucion");
+	getAll(id) { 
+		return http.get(`/evolucion/paciente/${id}`);
 	}
 	get(id) { 
 		return http.get(`/evolucion/${id}`);

@@ -8,7 +8,7 @@ module.exports = app => {
 
 	router.put("/:id", evolucion.update);
 	
-	router.get("/", evolucion.findAll);
+	router.get("/paciente/:id", evolucion.findAll);
 	router.get("/:id", evolucion.findOne);
 
 	app.use('/api/evolucion', router);

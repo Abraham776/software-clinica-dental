@@ -43,9 +43,10 @@ const AdministracionTratamientos = () => {
 					dataService.delete(tratamiento.idTratamientos)
 						.then(response => {
 							console.log(response.data);
-							const index = tratamientos.map(dat => {
+							let index = tratamientos.map(dat => {
 								return dat.idTratamientos === tratamiento.idtratamientos
 							})
+							index = index.indexOf(true);
 							tratamientos.splice(index, 1)
 							var newData = [];
 							Object.assign(newData, tratamientos);

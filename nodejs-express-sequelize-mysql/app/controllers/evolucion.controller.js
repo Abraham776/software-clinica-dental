@@ -5,7 +5,6 @@ const Op = db.Sequelize.Op;
 
 exports.create = (req, res) => {
 	const datos = {
-		idRegistroEvolucion: req.body.idRegistroEvolucion,
 		ObservacionesRegistro: req.body.ObservacionesRegistro,
 		FechaRegistro: req.body.FechaRegistro,
         Tratamiento: req.body.Tratamiento,
@@ -24,7 +23,11 @@ exports.create = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-	evolucion.findAll()
+	evolucion.findAll(
+		{
+			where: {Paciente_idPaciente: req.params.id}
+		}
+	)
 		.then(data => {
 			res.send(data);
 		})
