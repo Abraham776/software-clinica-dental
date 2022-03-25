@@ -2,14 +2,73 @@
 // 16/03/2022
 // Vista e inputs del historial de evolución del paciente
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Table } from "reactstrap";
 import Sidebar from "../../componentes/sidebarP";
 import "../../home.scss";
+import EvolucionDataService from "../../../../services/evolucion";
+
 
 const PacienteHistoEvolucion = () => {
 	var id = window.location.href;
 	id = id.slice(id.lastIndexOf("/") + 1);
+	const [evolucion, setEvolucion] = useState([]);
+
+	const dataService = new EvolucionDataService();
+
+	useEffect(() => {
+		dataService.getAll(id)
+			.then(response => {
+				setEvolucion(response.data);
+			})
+			.catch(err => {
+				console.log(err);
+			});
+	}, []);
+
+	function confirmAction() {
+		let confirmAction = window.confirm("¿Está seguro de querer borrar este registro? Esta acción es irreversible");
+		return confirmAction;
+	}
+	const list = evolucion.map(registroevolucion => {
+		return (
+			<tr>
+				<td> {registroevolucion.idRegistroEvolucion} </td>
+				<td> {registroevolucion.ObservacionesRegistro} </td>
+				<td><Button block onClick={function routePaciente() { window.location.href = `/PacienteHisto/${registroevolucion.Paciente_idPaciente}` }}>Ingresar</Button></td>
+				<td><Button block color="danger" onClick={function deletePaciente() {
+
+					let response = confirmAction();
+					if(!response){
+						window.alert("Acción cancelada");
+						return;
+					}
+
+					dataService.delete(registroevolucion.idRegistroEvolucion)
+						.then(response => {
+							console.log(response.data);
+
+							
+							let index = evolucion.map(dat => {
+								return dat.idRegistroEvolucion === registroevolucion.idRegistroEvolucion
+							})
+							index = index.indexOf(true);
+							evolucion.splice(index, 1)
+							var newData = [];
+							Object.assign(newData, evolucion);
+							
+							setEvolucion(newData);
+							window.alert("Registro borrado exitosamente");
+							
+						})
+						.catch(e => {
+							console.log(e);
+							window.alert("Fallo al borrar registro");
+						});
+				}}>Eliminar</Button></td>
+			</tr>
+		)
+	})
 	return (
 		<div className="home-contenido">
 			<Sidebar id={id}/>
@@ -18,21 +77,16 @@ const PacienteHistoEvolucion = () => {
 					<thead>
 						<tr>
 							<th> Fecha </th>
-							<th> Tratamiento </th>
+							<th> Observacion </th>
 							<th> </th>
 							<th> </th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td> 05/02/2022 </td>
-							<td> Extracción </td>
-							<td><Button block onClick={function routePaciente() { window.location.href = "/PacienteHistoEvolucionVista/${id}" }}>Editar</Button></td>
-							<td><Button block color="danger">Eliminar</Button></td>
-						</tr>
+						{list}
 					</tbody>
 				</Table>
-				<Button onClick={function routePaciente() { window.location.href = "/PacienteHistoEvolucionAdd/${id}" }}>Añadir nuevo registro</Button>
+				<Button onClick={function routePaciente() { window.location.href = ` /PacienteHistoEvolucionAdd/${id}` }}>Añadir nuevo registro</Button>
 			</div>
 		</div>
 	)
