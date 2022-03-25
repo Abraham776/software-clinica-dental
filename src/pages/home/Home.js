@@ -4,14 +4,29 @@ import Sidebar from "./componentes/sidebar";
 import { Bar, BarChart, CartesianGrid, Cell, Legend, Pie, PieChart, Tooltip, YAxis } from "recharts";
 import pacientesDataService from "../../services/pacientes";
 import citasDataService from "../../services/citas";
+import { Grid, Paper } from "@mui/material";
+import { Appointments, AppointmentTooltip, DateNavigator, MonthView, Scheduler, TodayButton, Toolbar } from "@devexpress/dx-react-scheduler-material-ui";
+import { ViewState } from "@devexpress/dx-react-scheduler";
 
 const Home = () => {
 
+	const currentDate = new Date();
 	const edadData = [];
-	const sexoData = [{"Hombres": 0, "Mujeres": 0, "Otro": 0}];
+	const sexoData = [{ "Hombres": 0, "Mujeres": 0, "Otro": 0 }];
+	const citaData = [];
+	const Content = (({
+		children, appointmentData, ...restProps
+	}) => (
+		<AppointmentTooltip.Content {...restProps} appointmentData={appointmentData}>
+			<Grid container alignItems="center">
+				<Grid item xs={10}>
+					<span>{appointmentData.location}</span>
+				</Grid>
+			</Grid>
+		</AppointmentTooltip.Content>
+	));
 	const [pacientes, setPacientes] = useState([]);
-	const [edades, setEdades] = useState([]);
-	const [sexo, setSexo] = useState([]);
+	const [citas, setCitas] = useState([]);
 	const PacientesDataService = new pacientesDataService();
 	const CitasDataService = new citasDataService();
 
@@ -23,7 +38,26 @@ const Home = () => {
 			.catch(err => {
 				console.log(err);
 			});
+		CitasDataService.getAll()
+			.then(response => {
+				setCitas(response.data);
+			})
+			.catch(err => {
+				console.log(err);
+			})
 	}, []);
+
+	citas.map(cita => {
+		const obj = {};
+		const date = new Date(cita.FechaCitas);
+		const endDate = new Date(date.getTime() + 60 * 60000);
+		obj["title"] = cita.NombreDelPacienteCitas;
+		obj["location"] = cita.AnotaciónCitas;
+		obj["startDate"] = date;
+		obj["endDate"] = endDate;
+		citaData.push(obj);
+	})
+	console.log(citaData);
 
 	pacientes.map(paciente => {
 		switch (paciente.Sexo) {
@@ -43,24 +77,18 @@ const Home = () => {
 				break;
 		}
 		const index = edadData.findIndex((e) => e.name === paciente.Edad + " años");
-		if(index != -1){
+		if (index != -1) {
 			edadData[index].value++;
 		} else {
-			edadData.push({name: paciente.Edad + " años", value: 1});
+			edadData.push({ name: paciente.Edad + " años", value: 1 });
 		}
 	});
-
-	console.log(sexoData);
-	console.log(edadData);
 
 	const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 	return (
 		<div className="home-contenido">
 			<Sidebar />
-			<div className="contenido-in">
-				Edades de los pacientes
-			</div>
 			<div className="contenido-in" id="first">
 				<PieChart width={200} height={250}>
 					<Legend verticalAlign="bottom" />
@@ -82,6 +110,26 @@ const Home = () => {
 					<Bar dataKey="Mujeres" fill="#00C49F" />
 					<Bar dataKey="Otros" fill="#FFBB28" />
 				</BarChart>
+			</div>
+
+			<div className="contenido-in">
+				<Paper>
+					<Scheduler
+						data={citaData}
+					>
+						<ViewState
+							defaultCurrentDate={currentDate}
+						/>
+						<MonthView />
+						<Toolbar />
+						<DateNavigator />
+						<TodayButton />
+						<Appointments />
+						<AppointmentTooltip 
+							contentComponent={Content}
+						/>
+					</Scheduler>
+				</Paper>
 			</div>
 		</div>
 	)
