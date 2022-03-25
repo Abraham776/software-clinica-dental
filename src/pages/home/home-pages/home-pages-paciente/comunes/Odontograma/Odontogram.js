@@ -5,7 +5,7 @@
 import React from 'react';
 import './Odontogram.css';
 import Teeth from './Teeth';
-import { Button, Col, Form, FormGroup, Input, Label } from "reactstrap";
+import { Button } from "reactstrap";
 
 //Componente odontograma, renderiza finalmente todas las filas de dientes
 function Odontogram({ data = [] }) {
