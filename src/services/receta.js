@@ -1,7 +1,7 @@
 import http from '../http-common';
 class recetaDataService {
-	getAll() { 
-		return http.get("/receta");
+	getAll(id) { 
+		return http.get(`/receta/paciente/${id}`);
 	}
 	get(id) { 
 		return http.get(`/receta/${id}`);

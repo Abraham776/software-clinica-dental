@@ -23,7 +23,11 @@ exports.create = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-	consentimientopaciente.findAll()
+	consentimientopaciente.findAll(
+		{
+			where: {Paciente_idPaciente: req.params.id}
+		}
+	)
 		.then(data => {
 			res.send(data);
 		})

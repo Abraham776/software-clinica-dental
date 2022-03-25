@@ -1,7 +1,7 @@
 import http from '../http-common';
 class consentimientoDataService {
-	getAll() { 
-		return http.get("/consentimiento");
+	getAll(id) { 
+		return http.get(`/consentimiento/paciente/${id}`);
 	}
 	get(id) { 
 		return http.get(`/consentimiento/${id}`);

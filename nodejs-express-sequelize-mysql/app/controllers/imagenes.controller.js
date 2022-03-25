@@ -1,11 +1,10 @@
 const db = require("../models");
 const imagenesfull = require("../models/imagenesdia");
-const imagenes = db.models.registroevolucion;
+const imagenes = db.models.imagenesdia;
 const Op = db.Sequelize.Op;
 
 exports.create = (req, res) => {
 	const datos = {
-		idImagenesDia: req.body.idImagenesDia,
 		ImagenesDiagro: req.body.ImagenesDiagro,
 		Paciente_idPaciente: req.body.Paciente_idPaciente
 	}
@@ -22,7 +21,11 @@ exports.create = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-	imagenes.findAll()
+	imagenes.findAll(
+		{
+			where: {Paciente_idPaciente: req.params.id}
+		}
+	)
 		.then(data => {
 			res.send(data);
 		})

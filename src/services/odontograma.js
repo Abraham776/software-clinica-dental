@@ -1,7 +1,7 @@
 import http from '../http-common';
 class odontogramaDataService {
-	getAll() { 
-		return http.get("/odontograma");
+	getAll(id) { 
+		return http.get(`/odontograma/paciente/${id}`);
 	}
 	get(id) { 
 		return http.get(`/odontograma/${id}`);

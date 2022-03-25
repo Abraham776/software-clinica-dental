@@ -8,7 +8,7 @@ module.exports = app => {
 
 	router.put("/:id", odontograma.update);
 	
-	router.get("/", odontograma.findAll);
+	router.get("/paciente/:id", odontograma.findAll);
 	router.get("/:id", odontograma.findOne);
 
 	app.use('/api/odontograma', router);

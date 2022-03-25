@@ -22,7 +22,11 @@ exports.create = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-	odontograma.findAll()
+	odontograma.findAll(
+		{
+			where: {Paciente_idPaciente: req.params.id}
+		}
+	)
 		.then(data => {
 			res.send(data);
 		})

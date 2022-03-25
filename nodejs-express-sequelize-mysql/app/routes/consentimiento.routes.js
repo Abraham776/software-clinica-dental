@@ -8,7 +8,7 @@ module.exports = app => {
 
 	router.put("/:id", consentimiento.update);
 	
-	router.get("/", consentimiento.findAll);
+	router.get("/paciente/:id", consentimiento.findAll);
 	router.get("/:id", consentimiento.findOne);
 
 	app.use('/api/consentimiento', router);

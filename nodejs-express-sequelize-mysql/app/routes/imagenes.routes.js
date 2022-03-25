@@ -8,7 +8,7 @@ module.exports = app => {
 
 	router.put("/:id", imagenes.update);
 	
-	router.get("/", imagenes.findAll);
+	router.get("/paciente/:id", imagenes.findAll);
 	router.get("/:id", imagenes.findOne);
 
 	app.use('/api/imagenes', router);
