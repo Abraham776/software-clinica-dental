@@ -4,6 +4,7 @@ import Paciente from './pages/home/home-pages/Pacientes';
 import HistoriaClinica from './pages/home/home-pages/HistoriaClinica';
 import AgendarCita from './pages/home/home-pages/AgendarCita';
 import Administracion from './pages/home/home-pages/Administracion';
+import AdministracionPagos from './pages/home/home-pages/AdministracionPagos';
 import AdministracionDoctores from './pages/home/home-pages/AdministracionDoctores';
 import AdministracionTratamientos from './pages/home/home-pages/AdministracionTratamientos';
 import AdministracionTratamientosAdd from './pages/home/home-pages/AdministracionTratamientosAdd';
@@ -40,6 +41,7 @@ export default function App() {
 				<Route path='/historiaClinica' element={<HistoriaClinica />} />
 				<Route path='/agendarCita' element={<AgendarCita />} />
 				<Route path='/administracion' element={<Administracion />} />
+				<Route path='/administracionpagos' element={<AdministracionPagos />} />
 				<Route path='/administraciondoctores' element={<AdministracionDoctores />} />
 				<Route path='/administraciontratamientos' element={<AdministracionTratamientos/>} />
 				<Route path='/AdministracionDoctoresAdd' element={<AdministracionDoctoresAdd />} />

@@ -35,7 +35,7 @@ const PacienteHistoEvolucion = () => {
 			<tr>
 				<td> {registroevolucion.idRegistroEvolucion} </td>
 				<td> {registroevolucion.ObservacionesRegistro} </td>
-				<td><Button block onClick={function routePaciente() { window.location.href = `/PacienteHisto/${registroevolucion.Paciente_idPaciente}` }}>Ingresar</Button></td>
+				<td><Button block onClick={function routePaciente() { window.location.href = `/PacienteHistoEvolucionVista/${registroevolucion.idRegistroEvolucion}` }}>Ingresar</Button></td>
 				<td><Button block color="danger" onClick={function deletePaciente() {
 
 					let response = confirmAction();
