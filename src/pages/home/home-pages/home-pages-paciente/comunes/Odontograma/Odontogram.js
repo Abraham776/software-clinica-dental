@@ -2,19 +2,46 @@
 //	27/02/2022
 //  Componentes y driver de la función Odontograma del software
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Odontogram.css';
 import Teeth from './Teeth';
 import { Button } from "reactstrap";
+import OdontogramaDataService from "../../../../../../services/odontograma";
+import { ContactSupportOutlined } from '@mui/icons-material';
 
 //Componente odontograma, renderiza finalmente todas las filas de dientes
 function Odontogram({ data = [] }) {
+	var id = window.location.href;
+	id = id.slice(id.lastIndexOf("/") + 1);
+	const [odontograma, setOdontograma] = useState([]);
+	const dataService = new OdontogramaDataService();
+	function update() {
+		
+		var data = {idOdontograma: id, JsonOdontograma: odontogramState};
 
+		dataService.update(id, data)
+			.then(response => {
+				console.log(response);
+			})
+			.catch(err => {
+				console.log(err);
+			})
+	}
 	//OdontogramState recolecta el estado de cada diente del odontograma
 	let odontogramState = {};
-
+	// console.log(data);
 	//teethArr inicializa cada componente "Teeth" que corresponde a una fila de dientes del odontograma
+	data.map(dat => {
+		// console.log("dato:",dat);
+		for (const key in dat) {
+			if (Object.hasOwnProperty.call(dat, key)) {
+				// console.log(dat[key]);
+				odontogramState[key] = dat[key];
+			}
+		}
+	})
 	let teethArr = [];
+	
 
 	//handleToothUpdate es llamado cada vez que un diente se le asigna un nuevo estado, escribe a odontogramState.
 	const handleToothUpdate = (id, toothState) => {
@@ -62,7 +89,7 @@ function Odontogram({ data = [] }) {
 				<svg version="1.1" viewBox='-100 -100 1000 400' width="100%">
 					{teethArr}
 				</svg>
-				<Button name="form">Guardar</Button>
+				<Button name="form" onClick={update}>Guardar</Button>
 			</div>
 		</>
 	);

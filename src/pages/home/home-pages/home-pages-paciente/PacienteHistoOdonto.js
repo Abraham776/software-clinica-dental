@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../../componentes/sidebarP";
 import "../../home.scss";
 import Odontogram from './comunes/Odontograma/Odontogram';
 import { Button, Col, Form, FormGroup, Input, Label } from "reactstrap";
+import OdontogramaDataService from "../../../../services/odontograma";
 
 const PacienteHistoOdonto = () => {
 	var id = window.location.href;
 	id = id.slice(id.lastIndexOf("/") + 1);
+	
+	const [odontograma, setodOntograma] = useState([]);
 
-	//	Función para separar los datos cargados en las filas de dientes del odontograma
-	// 	data: JSON con keys iguales a los numeros de cada diente y valores de caries y otras operaciones del dentista
-	// 	Regresa una array donde se concentran cada fila de dientes con sus objetos correspondientes
+	const dataService = new OdontogramaDataService();
+
+	useEffect(() => {
+		dataService.getAll(id)
+			.then(response => {
+				setodOntograma(response.data);
+			})
+			.catch(err => {
+				console.log(err);
+			});
+	}, []);
+
 	function separateData(data) {
 		//Inicializando objetos de cada fila
 		let row1 = {};
@@ -59,6 +71,16 @@ const PacienteHistoOdonto = () => {
 		var rows = [row1, row2, row3, row4, row5, row6, row7, row8]
 		return rows;
 	}
+	const list = odontograma.map(odontograma => {
+		return (
+			<Odontogram data={separateData(odontograma.JsonOdontograma)}/>
+			)
+			
+	})
+	//	Función para separar los datos cargados en las filas de dientes del odontograma
+	// 	data: JSON con keys iguales a los numeros de cada diente y valores de caries y otras operaciones del dentista
+	// 	Regresa una array donde se concentran cada fila de dientes con sus objetos correspondientes
+	
 
 
 	return (
@@ -68,7 +90,7 @@ const PacienteHistoOdonto = () => {
 			
 			</div>
 				
-			<Odontogram/>
+			{list}
 		</div>
 	)
 };

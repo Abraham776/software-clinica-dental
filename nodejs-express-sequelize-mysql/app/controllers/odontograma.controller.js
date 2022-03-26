@@ -5,7 +5,7 @@ const Op = db.Sequelize.Op;
 
 exports.create = (req, res) => {
 	const datos = {
-		idOdontograma: req.body.idOdontograma,
+		idOdontograma: req.body.Paciente_idPaciente,
 		JsonOdontograma: req.body.JsonOdontograma,
 		Paciente_idPaciente: req.body.Paciente_idPaciente
 	}

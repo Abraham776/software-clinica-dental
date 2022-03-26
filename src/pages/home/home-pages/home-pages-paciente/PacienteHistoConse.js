@@ -5,9 +5,10 @@ import React, { useRef } from "react";
 import Sidebar from "../../componentes/sidebarP";
 import "../../home.scss";
 import LoadPdf from "./LoadPdf";
+import { Button, Col, Form, FormGroup, Input, Label } from "reactstrap";
 import ConsentimientoInformado from "./ConsentimientoInformado.pdf";
 import { useReactToPrint } from "react-to-print";
-import { Button } from "reactstrap";
+import ConseDataService from "../../../../services/consentimiento";
 
 const PacienteHistoConse = () => {
 	var id = window.location.href;
@@ -16,7 +17,17 @@ const PacienteHistoConse = () => {
 	const handlePrint = useReactToPrint({
 		content: () => componentRef.current
 	});
+	const dataService = new ConseDataService();
 
+	function save(){	
+	let file=document.getElementById("RutaField");
+
+			
+			  
+			  console.log(file.files[0].fullPath);
+			
+
+	}
 	return (
 		<div className="home-contenido">
 			<Sidebar id={id}/>
@@ -26,6 +37,19 @@ const PacienteHistoConse = () => {
 				>
 					Imprimir consentimiento
 				</Button>
+				<Button
+					onClick={save}
+				>
+					Guardar Consentimiento
+				</Button>
+				<Form inline name="form" id="form">
+					<FormGroup row>
+						<Col sm={6}>
+							<Label for="fecha" >Agregar Consentimiento</Label>
+							<Input type="file" name="Ruta" id="RutaField" webkitdirectory/>
+						</Col>
+					</FormGroup>
+				</Form>
 				<LoadPdf pdf={ConsentimientoInformado} ref={componentRef} />
 			</div>
 		</div>
