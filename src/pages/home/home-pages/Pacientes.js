@@ -10,7 +10,6 @@ import PacientesDataService from "../../../services/pacientes";
 
 const Paciente = () => {
 	const [pacientes, setPacientes] = useState([]);
-
 	const dataService = new PacientesDataService();
 
 	useEffect(() => {
