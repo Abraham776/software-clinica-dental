@@ -556,3 +556,35 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2022-03-19 18:33:28
+DELIMITER //
+create trigger AgregarOdontog after insert on paciente
+for each row begin
+		insert into odontograma (idOdontograma,JsonOdontograma,Paciente_idPaciente) values (new.idPaciente,'{
+        "16": {
+            "Cavities": {
+                "center": 0,
+                "top": 0,
+                "bottom": 0,
+                "left": 0,
+                "right": 0
+            },
+            "Extract": 0,
+            "Crown": 0,
+            "Filter": 0,
+            "Fracture": 0
+        },
+        "17": {
+            "Cavities": {
+                "center": 0,
+                "top": 0,
+                "bottom": 0,
+                "left": 0,
+                "right": 0
+            },
+            "Extract": 0,
+            "Crown": 0,
+            "Filter": 0,
+            "Fracture": 0
+        }
+    }', new.idPaciente);
+	end//
