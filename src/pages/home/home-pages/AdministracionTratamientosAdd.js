@@ -31,6 +31,28 @@ export const AdministracionTratamientosAdd = () => {
 			})
 	}
 
+	function validateForm(){
+		var form = document.getElementById("form");
+		var string = "\n";
+		var filled = true;
+
+		Array.from(form.elements).forEach(element => {
+			if(element.type !== "button"){
+				if(element.value == "" && element.name !== "FotoPaciente"){
+					string += "-" + element.name + `\n`;
+					filled = false;
+				}
+			}
+		});
+
+		if(!filled){
+			window.alert("Por favor, rellene los siguientes campos faltantes: " + string);
+			return;
+		}
+
+		save();
+	}
+
 	return (
 		<div className="home-contenido">
 			<Sidebar />
@@ -41,10 +63,10 @@ export const AdministracionTratamientosAdd = () => {
 							<Label for="nombre">Nombre</Label>
 							<Input type="text" name="NombreTratamiento" id="nombreField" />
 							<Label for="precio">Precio</Label>
-							<Input type="number" name="PrecioTratamiento" id="precioField" />
+							<Input type="number" name="PrecioTratamiento" id="precioField" min={1}/>
 						</Col>
 					</FormGroup>
-					<Button className="me-3" onClick={save}>Añadir</Button>
+					<Button className="me-3" onClick={validateForm}>Añadir</Button>
 					<Button className="me-3" onClick={function back(){window.location.href = "/AdministracionTratamientos"}}>Volver</Button>
 				</Form>
 			</div>

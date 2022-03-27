@@ -32,6 +32,28 @@ export const AdministracionDoctoresAdd = () => {
 			})
 	}
 
+	function validateForm(){
+		var form = document.getElementById("form");
+		var string = "\n";
+		var filled = true;
+
+		Array.from(form.elements).forEach(element => {
+			if(element.type !== "button"){
+				if(element.value == "" && element.name !== "FotoPaciente"){
+					string += "-" + element.name + `\n`;
+					filled = false;
+				}
+			}
+		});
+
+		if(!filled){
+			window.alert("Por favor, rellene los siguientes campos faltantes: " + string);
+			return;
+		}
+
+		save();
+	}
+
 	return (
 		<div className="home-contenido">
 			<Sidebar />
@@ -59,7 +81,7 @@ export const AdministracionDoctoresAdd = () => {
 					</Input>
 
 					<br/>
-					<Button className="me-3" onClick={save}>Añadir</Button>
+					<Button className="me-3" onClick={validateForm}>Añadir</Button>
 					<Button className="me-3" onClick={function back(){window.location.href = "/AdministracionDoctores"}}>Volver</Button>
 				</Form>
 			</div>
