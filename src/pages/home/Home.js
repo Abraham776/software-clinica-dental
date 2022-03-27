@@ -64,7 +64,7 @@ const Home = () => {
 		<div className="home-contenido">
 			<Sidebar />
 			
-			<div className="contenido-in">
+			<div className="contenido-cita">
 				<Paper>
 					<Scheduler
 						data={citaData}

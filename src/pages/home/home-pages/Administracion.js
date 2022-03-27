@@ -63,7 +63,7 @@ const Administracion = () => {
 				</PieChart>
 			</div>
 			
-			<div className="contenido-in" id="second">
+			<div className="barras" id="second">
 			
 				<BarChart width={330} height={250} data={sexoData}>
 					<CartesianGrid strokeDasharray="3 3" />

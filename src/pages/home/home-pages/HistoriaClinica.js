@@ -21,7 +21,7 @@ const HistoriaClinica = () => {
 			}
 		});
 
-		// console.log(data);
+		//console.log(data);
 
 		dataService.create(data)
 			.then(response => {
