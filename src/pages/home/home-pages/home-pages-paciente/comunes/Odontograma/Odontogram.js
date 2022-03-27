@@ -89,7 +89,7 @@ function Odontogram({ data = [] }) {
 				<svg version="1.1" viewBox='-100 -100 1000 400' width="100%">
 					{teethArr}
 				</svg>
-				<Button name="form" onClick={update}>Guardar</Button>
+				<Button name="form" onClick={update} className="boton-odonto">Guardar</Button>
 			</div>
 		</>
 	);

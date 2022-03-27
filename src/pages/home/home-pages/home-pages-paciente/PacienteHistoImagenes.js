@@ -81,7 +81,13 @@ const PacienteHistoImagenes = () => {
 	return (
 		<div className="home-contenido">
 			<Sidebar id={id}/>
-			<div className="img-paciente">
+			<div >
+				<center><h1 className="ima-log">Imagenes del paciente</h1></center>
+					<br/>
+			</div>
+
+			<div className="img-pacientee">
+			
 				{list}
 				<br/>
 				<Button onClick={function (){window.location.href = `/PacienteHistoImagenesAdd/${id}`}}>Añadir nueva imagen</Button>

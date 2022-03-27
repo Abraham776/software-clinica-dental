@@ -17,36 +17,24 @@ const PacienteHistoConse = () => {
 	const handlePrint = useReactToPrint({
 		content: () => componentRef.current
 	});
-	const dataService = new ConseDataService();
 
-	function save(){	
-	let file=document.getElementById("RutaField");
-
-			
-			  
-			  console.log(file.files[0].fullPath);
-			
-
-	}
 	return (
 		<div className="home-contenido">
+			
 			<Sidebar id={id}/>
 			<div className="form-inputs">
-				<Button
+			<div>
+			<center><h1 className="ima-logggg">Consentimiento</h1></center>
+			<br/><br/>
+			</div>
+			<Button
 					onClick={handlePrint}
 				>
 					Imprimir consentimiento
 				</Button>
-				<Button
-					onClick={save}
-				>
-					Guardar Consentimiento
-				</Button>
 				<Form inline name="form" id="form">
 					<FormGroup row>
 						<Col sm={6}>
-							<Label for="fecha" >Agregar Consentimiento</Label>
-							<Input type="file" name="Ruta" id="RutaField" webkitdirectory/>
 						</Col>
 					</FormGroup>
 				</Form>

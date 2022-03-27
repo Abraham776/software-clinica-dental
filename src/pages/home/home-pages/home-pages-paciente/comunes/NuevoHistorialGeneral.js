@@ -15,7 +15,7 @@ const NuevoHistorialGeneral = () => {
 				<img src={LogoLogin} alt="logo" />
 				<Form inline>
 					<FormGroup row>
-						<center><h1>Odontología General</h1></center>
+						<center><h1 className="titulo-g">Odontología General</h1></center>
 						<Col sm={5}>
 							<Label for="fecha">FECHA:</Label>
 							<Input type="date" name="fecha"

@@ -72,7 +72,10 @@ const PacienteHistoEvolucion = () => {
 	return (
 		<div className="home-contenido">
 			<Sidebar id={id}/>
+			
 			<div className="form-inputs">
+				<center><h1>Evolucion del paciente</h1></center>
+			<br/>
 				<Table bordered hover responsive striped>
 					<thead>
 						<tr>

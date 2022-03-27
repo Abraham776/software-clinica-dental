@@ -49,6 +49,8 @@ const PacienteHisto = () => {
 		<div className="home-contenido">
 			<Sidebar id={id} />
 			<div className="form-inputs">
+			<center><h1>Datos generales</h1></center>
+			<br/>
 				<Form inline name="form" id="form">
 					<FormGroup row>
 						<Col sm={4}>

@@ -86,10 +86,10 @@ const PacienteHistoOdonto = () => {
 	return (
 		<div className="home-contenido">
 			<Sidebar id = {id}/>
-			<div className="contenido-in">
-			
+			<div className="hola-in">
+			<h1 clasName="titulo-odo">Odontograma</h1>
 			</div>
-				
+			
 			{list}
 		</div>
 	)

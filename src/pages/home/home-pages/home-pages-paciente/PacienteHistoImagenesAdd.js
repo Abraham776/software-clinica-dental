@@ -38,6 +38,9 @@ const PacienteHistoImagenesAdd = () => {
 		<div className="home-contenido">
 			<Sidebar id={id}/>
 			<div className="img-paciente">
+			<center><h1 className="ima-loggg">Añadir Imagen</h1></center>
+			<br></br>
+				
 				<Form inline name="form" id="form">
 					<FormGroup row>
 						<Col sm={6}>

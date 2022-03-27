@@ -90,6 +90,8 @@ const PacienteHistoReceta = () => {
 		<div className="home-contenido">
 			<Sidebar id={id}/>
 			<div className="form-inputs">
+			<center><h1 className="ima-loggg">Generar receta</h1></center>
+					<br/>
 			<Form>
 					<FormGroup>
 						<Col sm={6}>
