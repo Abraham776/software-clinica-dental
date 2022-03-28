@@ -25,7 +25,7 @@ const NuevoHistorialOrt = () => {
 
 	function update() {
 		var form = document.getElementById("form");
-		var data = {Paciente_idPaciente: pacientes.Paciente_idPaciente};
+		var data = {};
 
 		Array.from(form.elements).forEach(element => {
 			if (element.type !== "button") {

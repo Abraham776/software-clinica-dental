@@ -30,7 +30,7 @@ const AdministracionDoctores = () => {
 	}, []);
 	
 	
-	const lista = pago.map(recibo => {
+	pago.map(recibo => {
 		
 		return (
 				 recibo.Total
@@ -41,7 +41,16 @@ const AdministracionDoctores = () => {
 			<tr>
 				<td> {paciente.NombrePaciente} </td>
 				<td> {paciente.CorreoPaciente} </td>
-				<td> {lista}</td>	
+				<td> {pago.map(recibo => {
+					if(recibo.Paciente_idPaciente== paciente.idPaciente){
+						return(recibo.Total)	
+					}			
+				
+				})}  
+	
+	
+	
+	       </td>	
 				<td><Button block onClick={function routePaciente() { window.location.href = `/administracionpagosAdd/${paciente.idPaciente}` }}>Ver adeudo</Button></td>
 			</tr>
 		)
