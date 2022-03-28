@@ -8,7 +8,7 @@ import OdontogramaDataService from "../../../../services/odontograma";
 const PacienteHistoOdonto = () => {
 	var id = window.location.href;
 	id = id.slice(id.lastIndexOf("/") + 1);
-	
+
 	const [odontograma, setodOntograma] = useState([]);
 
 	const dataService = new OdontogramaDataService();
@@ -73,23 +73,23 @@ const PacienteHistoOdonto = () => {
 	}
 	const list = odontograma.map(odontograma => {
 		return (
-			<Odontogram data={separateData(odontograma.JsonOdontograma)}/>
-			)
-			
+			<Odontogram data={separateData(odontograma.JsonOdontograma)} />
+		)
+
 	})
 	//	Función para separar los datos cargados en las filas de dientes del odontograma
 	// 	data: JSON con keys iguales a los numeros de cada diente y valores de caries y otras operaciones del dentista
 	// 	Regresa una array donde se concentran cada fila de dientes con sus objetos correspondientes
-	
+
 
 
 	return (
 		<div className="home-contenido">
-			<Sidebar id = {id}/>
+			<Sidebar id={id} />
 			<div className="hola-in">
-			<h1 clasName="titulo-odo">Odontograma</h1>
+				<h1 clasName="titulo-odo">Odontograma</h1>
 			</div>
-			
+
 			{list}
 		</div>
 	)

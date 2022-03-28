@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import Titulo from "./componentes/Titulo";
 import Label from "./componentes/Label";
 import Input from "./componentes/Input";
-import Boton from "./componentes/Boton";
 import Logo from "./componentes/Logo";
 import './componentes/boton.css';
 import "./login.css";
 import doctorDataService from "../../services/doctor";
-import { Button, Form } from "reactstrap";
+import { Form } from "reactstrap";
 
 const Login = () => {
 	const dataService = new doctorDataService();
@@ -56,9 +55,8 @@ const Login = () => {
 					<Input type="text" name="UsuarioDoctor"  placeholder="Ingrese su usuario" />
 					<Label text='Contraseña' />
 					<Input type="password" name="Contraseña" placeholder="Ingrese su contraseña"  />
-
-
 				</Form>
+
 				<div className="Submit-boton">
 					<div className="botn">
 						<button className="botonLo" onClick={login}>Iniciar</button>

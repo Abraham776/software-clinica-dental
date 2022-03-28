@@ -29,11 +29,40 @@ const PacienteHistoImagenesAdd = () => {
 		dataService.create(data)
 			.then(response => {
 				console.log(response);
+				if(response.status === 200){
+					window.alert("Registro creado exitosamente");
+				} else {
+					window.alert("Ocurrió un error al crear el registro. Codigo " + response.status + "("+ response.statusText +"). "+"Contacte con el administrador");
+				}
 			})
 			.catch(err => {
 				console.log(err);
+				window.alert("Ocurrió un error al crear el registro.");
 			})
 	}
+
+	function validateForm(){
+		var form = document.getElementById("form");
+		var string = "\n";
+		var filled = true;
+
+		Array.from(form.elements).forEach(element => {
+			if(element.type !== "button"){
+				if(element.value == "" && element.name !== "FotoPaciente"){
+					string += "-" + element.name + `\n`;
+					filled = false;
+				}
+			}
+		});
+
+		if(!filled){
+			window.alert("Por favor, rellene los siguientes campos faltantes: " + string);
+			return;
+		}
+
+		save();
+	}
+
 	return (
 		<div className="home-contenido">
 			<Sidebar id={id}/>
@@ -50,7 +79,7 @@ const PacienteHistoImagenesAdd = () => {
 					</FormGroup>
 				</Form>
 				<br/>
-				<Button className="me-3" onClick={save}>Añadir</Button>
+				<Button className="me-3" onClick={validateForm}>Añadir</Button>
 				<Button className="me-3" onClick={function back() { window.location.href = `/PacienteHistoImagenes/${id}` }}>Volver</Button>
 			</div>
 		</div>
