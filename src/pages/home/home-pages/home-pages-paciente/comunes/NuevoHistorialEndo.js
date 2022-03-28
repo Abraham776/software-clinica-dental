@@ -11,8 +11,6 @@ const NuevoHistorialEndo = () => {
 		<div className="home-contenido">
 			<Sidebar id={id}/>
 			<div className="contenido-in-historiales">
-				{/* Inputs */}
-				<img src={LogoLogin} alt="logo" />
 				<Form inline>
 					<FormGroup row>
 						<center><h1>Endodoncia</h1></center>
@@ -25,10 +23,6 @@ const NuevoHistorialEndo = () => {
 						<Col sm={11}>
 							<Label >Motivo de la consulta:</Label>
 							<Input type="textarea" name="Motivo" id="Endo1" required />
-							<Label >Historia Médica:</Label>
-							<Input type="textarea" name="Medica" id="Endo2" required />
-							<Label >Historia Dental:</Label>
-							<Input type="textarea" name="Dental" id="Endo3" required />
 							<Label >Gingivitis:</Label>
 							<select class="form-control" name="Gingivitis" id="Endo4" required>
 								<option selected>-Escoga una opción-</option>

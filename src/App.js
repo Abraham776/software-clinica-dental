@@ -5,6 +5,7 @@ import HistoriaClinica from './pages/home/home-pages/HistoriaClinica';
 import AgendarCita from './pages/home/home-pages/AgendarCita';
 import Administracion from './pages/home/home-pages/Administracion';
 import AdministracionPagos from './pages/home/home-pages/AdministracionPagos';
+import AdministracionPagosAdd from './pages/home/home-pages/AdministracionPagosAdd';
 import AdministracionDoctores from './pages/home/home-pages/AdministracionDoctores';
 import AdministracionTratamientos from './pages/home/home-pages/AdministracionTratamientos';
 import AdministracionTratamientosAdd from './pages/home/home-pages/AdministracionTratamientosAdd';
@@ -28,6 +29,12 @@ import NuevoHistorialOrt from './pages/home/home-pages/home-pages-paciente/comun
 import NuevoHistorialOdon from './pages/home/home-pages/home-pages-paciente/comunes/NuevoHistorialOdon';
 import NuevoHistorialEndo from './pages/home/home-pages/home-pages-paciente/comunes/NuevoHistorialEndo';
 import NuevoHistorialGeneral from './pages/home/home-pages/home-pages-paciente/comunes/NuevoHistorialGeneral';
+import NuevoHistorialReha from './pages/home/home-pages/home-pages-paciente/comunes/NuevoHistorialReha';
+import ActuaHistoEndo from './pages/home/home-pages/home-pages-paciente/comunes/ActuaHistoEndo';
+import ActuaHistoGeneral from './pages/home/home-pages/home-pages-paciente/comunes/ActuaHistoGeneral';
+import ActuaHistoOdon from './pages/home/home-pages/home-pages-paciente/comunes/ActuaHistoOdon';
+import ActuaHistoOrt from './pages/home/home-pages/home-pages-paciente/comunes/ActuaHistoOrt';
+import ActuaHistoReha from './pages/home/home-pages/home-pages-paciente/comunes/ActuaHistoReha';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 //dghfhgfhg
 export default function App() {
@@ -41,6 +48,7 @@ export default function App() {
 				<Route path='/agendarCita' element={<AgendarCita />} />
 				<Route path='/administracion' element={<Administracion />} />
 				<Route path='/administracionpagos' element={<AdministracionPagos />} />
+				<Route path='/administracionpagosAdd/:id' element={<AdministracionPagosAdd />} />
 				<Route path='/administraciondoctores' element={<AdministracionDoctores />} />
 				<Route path='/administraciontratamientos' element={<AdministracionTratamientos/>} />
 				<Route path='/AdministracionDoctoresAdd' element={<AdministracionDoctoresAdd />} />
@@ -64,6 +72,12 @@ export default function App() {
 				<Route path='/NuevoHistorialOdon/:id' element={<NuevoHistorialOdon/>}/>
 				<Route path='/NuevoHistorialEndo/:id' element={<NuevoHistorialEndo/>}/>
 				<Route path='/NuevoHistorialGeneral/:id' element={<NuevoHistorialGeneral/>}/>
+				<Route path='/NuevoHistorialReha/:id' element={<NuevoHistorialReha/>}/>
+				<Route path='/ActuaHistoEndo/:id' element={<ActuaHistoEndo/>}/>
+				<Route path='/ActuaHistoGeneral/:id' element={<ActuaHistoGeneral/>}/>
+				<Route path='/ActuaHistoOdon/:id' element={<ActuaHistoOdon/>}/>
+				<Route path='/ActuaHistoOrt/:id' element={<ActuaHistoOrt/>}/>
+				<Route path='/ActuaHistoReha/:id' element={<ActuaHistoReha/>}/>
 			</Routes>
 		</BrowserRouter>
 	);

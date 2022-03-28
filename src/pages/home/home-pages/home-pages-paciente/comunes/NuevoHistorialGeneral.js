@@ -11,8 +11,6 @@ const NuevoHistorialGeneral = () => {
 		<div className="home-contenido">
 			<Sidebar id={id}/>
 			<div className="contenido-in-historiales">
-				{/* Inputs */}
-				<img src={LogoLogin} alt="logo" />
 				<Form inline>
 					<FormGroup row>
 						<center><h1 className="titulo-g">Odontología General</h1></center>
@@ -25,8 +23,6 @@ const NuevoHistorialGeneral = () => {
 						<Col sm={11}>
 							<Label >Motivo de la Consulta:</Label>
 							<Input type="textarea" name="Motivo" id="Gen1" required />
-							<Label >Antecedentes Familiares:</Label>
-							<Input type="textarea" name="AntecedentesF" id="Gen2" required />
 							<Label >Antecedentes Medicos:</Label>
 							<Input type="textarea" name="AntecedentesM" id="Gen3" required />
 							<Label >Anomalías:</Label>

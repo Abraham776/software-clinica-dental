@@ -3,41 +3,77 @@ import { Button, Col, Form, FormGroup, Input, Label } from "reactstrap";
 import Sidebar from "../../../componentes/sidebarP";
 import LogoLogin from "../../../../../assets/img/LogoLogin.jpg";
 import "../../../home.scss";
+import Historial1DataService from "../../../../../services/historial2";
 
 const NuevoHistorialOrt = () => {
 	var id = window.location.href;
 	id = id.slice(id.lastIndexOf("/") + 1);
+
+
+
+	const dataService = new Historial1DataService();
+
+	function save(){
+		var form = document.getElementById("form");
+		var data = {Paciente_idPaciente: id};
+
+		Array.from(form.elements).forEach(element => {
+			if(element.type !== "button"){
+				data[element.name] = element.value;
+			}
+		});
+
+		console.log(data);
+
+		dataService.create(data)
+			.then(response => {
+				console.log(response);
+				if(response.status === 200){
+					window.alert("Registro creado exitosamente");
+					window.location.href=`/PacienteHistoHistoriales2/${id}`;
+				} else {
+					window.alert("Ocurrió un error al crear el registro. Codigo " + response.status + "("+ response.statusText +"). "+"Contacte con el administrador");
+				}
+			})
+			.catch(err => {
+				console.log(err);
+				window.alert("Ocurrió un error al crear el registro.");
+			});
+	}
+
+
+
+
+
 	return (
 		<div className="home-contenido">
 			<Sidebar id={id}/>
 			<div className="contenido-in-historiales">
-				{/* Inputs */}
-				<img src={LogoLogin} alt="logo" />
-				<Form inline>
+				<Form inline name="form" id="form">
 					<FormGroup row>
-						<center><h1>Ortodoncia</h1></center>
+						
 
 						<Col sm={5}>
-							<Label for="fecha">FECHA:</Label>
-							<Input type="date" name="fecha"
+							<Label for="fecha">Fecha:</Label>
+							<Input type="date" name="FechaOrtod"
 								id="fechaOrt" required />
 						</Col>
 
 						<Col sm={11}>
 							<Label >Enfermedades Crónicas:</Label>
-							<Input type="textarea" name="Enfermedades" id="Ort1" required />
+							<Input type="textarea" name="EnfermedadesCronicas" id="Ort1" required />
 							<Label >Alteraciones Congénitas:</Label>
-							<Input type="textarea" name="Alteraciones" id="Ort2" required />
+							<Input type="textarea" name="AlteracionesCongenitas" id="Ort2" required />
 							<Label >Intervenciones Quirúrgicas:</Label>
-							<Input type="textarea" name="Intervenciones" id="Ort3" required />
+							<Input type="textarea" name="IntervecionesQuirurgicas" id="Ort3" required />
 							<Label >Tratamiento Previo:</Label>
-							<Input type="textarea" name="Tratamiento" id="Ort4" required />
+							<Input type="textarea" name="TratamientoPrevio" id="Ort4" required />
 						</Col>
-						<center><h1>Análisis Facial</h1></center>
+						
 
 						<Col sm={11}>
 							<Label >Patrón Facial:</Label>
-							<select class="form-control" name="Patron" id="Ort5" required>
+							<select class="form-control" name="PatronFacial" id="Ort5" required>
 								<option selected>-Escoga una opción-</option>
 								<option>Mesofacial</option>
 								<option>Dólico Facial</option>
@@ -58,48 +94,38 @@ const NuevoHistorialOrt = () => {
 								<option>otras</option>
 							</select>
 							<Label >Altura Facila:</Label>
-							<select class="form-control" name="Altura" id="Ort8" required>
-								<option selected>-Escoga una opción-</option>
-								<option>Equilibrada</option>
-								<option>Larga</option>
-								<option>Corta</option>
-							</select>
+							<Input type="number" name="AlturaFacial" id="Ort4" required />
 							<Label >Ancho Facial:</Label>
-							<select class="form-control" name="Ancho" id="Ort9" required>
-								<option selected>-Escoga una opción-</option>
-								<option>Equilibrado</option>
-								<option>Estrecho</option>
-								<option>Amplio</option>
-							</select>
+							<Input type="number" name="AnchoFacial" id="Ort4" required />
 							<Label >Perfil Maxilar:</Label>
-							<select class="form-control" name="Maxilar" id="Ort10" required>
+							<select class="form-control" name="PerfilMaxilar" id="Ort10" required>
 								<option selected>-Escoga una opción-</option>
 								<option>Ortognático</option>
 								<option>Prognático</option>
 								<option>Retrognático</option>
 							</select>
 							<Label >Perfil Mandibular:</Label>
-							<select class="form-control" name="Mandibular" id="Ort11" required>
+							<select class="form-control" name="PerfilMandibular" id="Ort11" required>
 								<option selected>-Escoga una opción-</option>
 								<option>Ortognático</option>
 								<option>Prognático</option>
 								<option>Retrognático</option>
 							</select>
 							<Label >Surco Labio-Mentón:</Label>
-							<select class="form-control" name="Surco" id="Ort12" required>
+							<select class="form-control" name="SurcoLabioMenton" id="Ort12" required>
 								<option selected>-Escoga una opción-</option>
 								<option>Normal</option>
 								<option>Marcado</option>
 								<option>Borrado</option>
 							</select>
 							<Label >Labios en Reposo:</Label>
-							<select class="form-control" name="Labios" id="Ort13" required>
+							<select class="form-control" name="LabiosReposo" id="Ort13" required>
 								<option selected>-Escoga una opción-</option>
 								<option>Competentes</option>
 								<option>Incompetentes</option>
 							</select>
 							<Label >Perfil Labial:</Label>
-							<select class="form-control" name="Labial" id="Ort14" required>
+							<select class="form-control" name="PerfilLabial" id="Ort14" required>
 								<option selected>-Escoga una opción-</option>
 								<option>Prostusivo Superior</option>
 								<option>Prostusivo Inferior</option>
@@ -109,7 +135,7 @@ const NuevoHistorialOrt = () => {
 							</select>
 						</Col>
 
-						<center><h1>Análisis Funcional</h1></center>
+						
 
 						<Col sm={11}>
 							<Label >Respiración:</Label>
@@ -120,27 +146,27 @@ const NuevoHistorialOrt = () => {
 								<option>Mixta</option>
 							</select>
 							<Label >Actividad Comisural:</Label>
-							<select class="form-control" name="Comisural" id="Ort16" required>
+							<select class="form-control" name="ActividadComisural" id="Ort16" required>
 								<option selected>-Escoga una opción-</option>
 								<option>Normal</option>
 								<option>Contracción</option>
 							</select>
 							<Label >Actividad Lingual:</Label>
-							<select class="form-control" name="Lingual" id="Ort17" required>
+							<select class="form-control" name="ActividadLingual" id="Ort17" required>
 								<option selected>-Escoga una opción-</option>
 								<option>Normal</option>
 								<option>Interposición Anterior</option>
 								<option>Interposición lateral</option>
 							</select>
 							<Label >Labio Superior:</Label>
-							<select class="form-control" name="Superior" id="Ort18" required>
+							<select class="form-control" name="LabioSuperior" id="Ort18" required>
 								<option selected>-Escoga una opción-</option>
 								<option>Normal</option>
 								<option>Hipoactivo</option>
 								<option>Hiperactivo</option>
 							</select>
 							<Label >Labio Inferior:</Label>
-							<select class="form-control" name="Inferior" id="Ort19" required>
+							<select class="form-control" name="LabioInferior" id="Ort19" required>
 								<option selected>-Escoga una opción-</option>
 								<option>Normal</option>
 								<option>Hipoactivo</option>
@@ -161,7 +187,7 @@ const NuevoHistorialOrt = () => {
 								<option>Hiperactivo</option>
 							</select>
 							<Label >Habitos de Succión:</Label>
-							<select class="form-control" name="Succion" id="Ort22" required>
+							<select class="form-control" name="HabitosDeSuccion" id="Ort22" required>
 								<option selected>-Escoga una opción-</option>
 								<option>Dedos</option>
 								<option>Lengua</option>
@@ -169,22 +195,22 @@ const NuevoHistorialOrt = () => {
 								<option>Onicofagia</option>
 							</select>
 							<Label >Análisis Esqueletal:</Label>
-							<Input type="textarea" name="Esqueleto" id="Ort23" required />
+							<Input type="textarea" name="AnalisisEsqueletal" id="Ort23" required />
 							<Label >Plan de Tratamiento:</Label>
-							<Input type="textarea" name="PTratamiento" id="Ort24" required />
+							<Input type="textarea" name="PlanDeTratamientoOrtod" id="Ort24" required />
 							<Label >Técnica y Aparatología a emplear:</Label>
-							<Input type="textarea" name="Aparatologia" id="Ort25" required />
+							<Input type="textarea" name="TecnicaYApara" id="Ort25" required />
 							<Label >Tiempo Estimado del tratamiento:</Label>
-							<Input type="textarea" name="Tiempo" id="Ort26" required />
+							<Input type="textarea" name="TiempoEstimadoTratamiento" id="Ort26" required />
 							<Label >Pronóstico:</Label>
-							<Input type="textarea" name="PronosticoOrt" id="Ort27" required />
+							<Input type="textarea" name="PronosticoOrtod" id="Ort27" required />
 
 						</Col>
 
 
 					</FormGroup>
 
-					<Button >Guardar</Button>
+					<Button onClick={save}>Guardar</Button>
 					<Button onClick={function back() {window.location.href=`/PacienteHistoHistoriales2/${id}`}}>Cancelar</Button>
 				</Form>
 			</div>
