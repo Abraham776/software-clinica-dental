@@ -33,7 +33,7 @@ const PacienteHistoReceta = () => {
 			})
 			.catch(err => {
 				console.log(err);
-			});			
+			});		
 	}, []);
 	
 	
@@ -45,8 +45,8 @@ const PacienteHistoReceta = () => {
 			})
 			.catch(err => {
 				console.log(err);
-			})
-
+			});
+			
 			console.log(doctores.NombreDoctor);
 		let alergia = document.getElementById("fechaField").value;
 		let receta = document.getElementById("recetaField").value;
@@ -59,7 +59,6 @@ const PacienteHistoReceta = () => {
 		document.getElementById("nombrepac").innerHTML = paciente.NombrePaciente;
 		document.getElementById("pesopac").innerHTML = paciente.Sexo;
 		document.getElementById("alergias").innerHTML = paciente.AlergiaMedicamentoPaciente;
-		document.getElementById("cel").innerHTML = doctores.NombreDoctor + doctores.Apellidos;
 		document.getElementById("edad").innerHTML = paciente.Edad;
 		dis1.disabled =true;
 		dis.disabled =true;
@@ -117,7 +116,7 @@ const PacienteHistoReceta = () => {
 			<Label for="teldoc" className="larec3">6693241323</Label>
 			
 
-			<center><div className="Receta-centro"><Label for="fecha" className="larec4" id="cel">DR. Victor Gomez Lizarraga</Label></div></center>
+			
 
 
 			

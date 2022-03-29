@@ -20,6 +20,19 @@ function Tooth({ number, positionX, positionY, onChange, initialState = {
 	Filter: 0,
 	Fracture: 0
 } }) {
+	const clearState = {
+		Cavities: {
+			center: 0,
+			top: 0,
+			bottom: 0,
+			left: 0,
+			right: 0
+		},
+		Extract: 0,
+		Crown: 0,
+		Filter: 0,
+		Fracture: 0
+	}
 
 	//Reducer para modificar los valores del estado del diente en el JSON
 	function reducer(toothState, action) {
@@ -35,7 +48,7 @@ function Tooth({ number, positionX, positionY, onChange, initialState = {
 			case 'carie':
 				return { ...toothState, Cavities: setCavities(toothState, action.zone, action.value) };
 			case 'clear':
-				return initialState;
+				return clearState;
 			default:
 				throw new Error();
 		}
