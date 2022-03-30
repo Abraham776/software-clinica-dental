@@ -32,8 +32,8 @@ const HitorialEndodoncia = () => {
 	const list = historial1.map(historialedodoncia => {
 		return (
 			<tr>
-				<td> {historialedodoncia.idHistorialEdodoncia}</td>
-				<td> {historialedodoncia.FechaEdo} </td>
+				<td> {historialedodoncia.FechaEdo}</td>
+				<td> {historialedodoncia.Pronostico}</td>
 				<td><Button block onClick={function routePaciente() { window.location.href = `/ActuaHistoEndo/${historialedodoncia.idHistorialEdodoncia}` }}>Ingresar</Button></td>
 				<td><Button block color="danger" onClick={function deletePaciente() {
 
@@ -84,9 +84,8 @@ const HitorialEndodoncia = () => {
 						
 					<thead>
 						<tr>
-							<th> Foto </th>
-							<th> Correo </th>
-							<th> Adeudo</th>
+							<th> Fecha </th>
+							<th> Pronostico </th>
 						</tr>
 					</thead>
 					<tbody>

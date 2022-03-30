@@ -31,14 +31,14 @@ const AdministracionDoctores = () => {
 		return (
 			<tr>
 				<td> {doctor.NombreDoctor} </td>
-				<td> {doctor.Apellidos} </td>
+				<td> {doctor.Estatus} </td>
 				<td><Button block color="danger" onClick={function deletePaciente() {
 					let response = confirmAction();
 					if (!response) {
 						window.alert("Acción cancelada");
 						return;
 					}
-
+					console.log(doctor.idDoctor)
 					doctorDataService.delete(doctor.idDoctor)
 						.then(response => {
 							console.log(response.data);
@@ -68,8 +68,8 @@ const AdministracionDoctores = () => {
 				<Table bordered hover responsive striped>
 					<thead>
 						<tr>
-							<th> Foto </th>
 							<th> Nombre </th>
+							<th> Status </th>
 							<th> </th>
 						</tr>
 					</thead>

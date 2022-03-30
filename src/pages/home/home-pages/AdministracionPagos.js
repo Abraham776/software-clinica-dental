@@ -73,7 +73,7 @@ const AdministracionDoctores = () => {
 				<Table bordered hover responsive striped>
 					<thead>
 						<tr>
-							<th> Foto </th>
+							<th> Nombre </th>
 							<th> Correo </th>
 							<th> Adeudo</th>
 						</tr>
@@ -84,7 +84,6 @@ const AdministracionDoctores = () => {
 					</tbody>
 				</Table>
 
-				<Button className="me-3" onClick={function routePaciente() { window.location.href = "/AdministracionDoctoresAdd" }}>Añadir nuevo doctor</Button>
 				<Button className="me-3" onClick={function back() { window.location.href = "/Administracion" }}>Volver</Button>
 			</div>
 		</div>

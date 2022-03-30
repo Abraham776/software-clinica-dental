@@ -38,6 +38,11 @@ const AgendaCita = () => {
 		citaDataService.create(data)
 			.then(response => {
 				console.log(response);
+				if(response.status === 200){
+					window.alert("Cita Agregada");
+				} else {
+					window.alert("Ocurrió un error al crear el registro. Codigo " + response.status + "("+ response.statusText +"). "+"Contacte con el administrador");
+				}
 			})
 			.catch(err => {
 				console.log(err);

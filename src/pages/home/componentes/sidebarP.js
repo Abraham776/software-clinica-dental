@@ -29,7 +29,7 @@ const sidebar = (id) => {
 				<li className="chiloLi"><Menu id={id.id}/></li>
 				<li><NavLink to={Odontograma} exact className="py-2 w-100 d-inline-block px-2" activeClassname="active"><AiOutlineReconciliation className="me-2" />Odontograma</NavLink></li>
 				<li><NavLink to={evolucion} exact className="py-2 w-100 d-inline-block px-2" activeClassname="active"><AiOutlineSmile className="me-2" />Evolucion</NavLink></li>
-				<li><NavLink to={imagenes}exact className="py-2 w-100 d-inline-block px-2" activeClassname="active"><AiOutlinePicture className="me-2" />Imagenes</NavLink></li>
+				{/* <li><NavLink to={imagenes}exact className="py-2 w-100 d-inline-block px-2" activeClassname="active"><AiOutlinePicture className="me-2" />Imagenes</NavLink></li> */}
 				<li><NavLink to={receta} exact className="py-2 w-100 d-inline-block px-2" activeClassname="active"><AiOutlineFile className="me-2" />Receta</NavLink></li>
 				<li><NavLink to={consentimiento} exact className="py-2 w-100 d-inline-block px-2" activeClassname="active"><AiOutlineSafety className="me-2" />Consentimiento</NavLink></li>
 

@@ -39,7 +39,7 @@ const PacienteHistoImagenes = () => {
 		<Card>
 			<CardImg
 				alt="imagen"
-				src= "{`data:image/jpeg;base64,${imagenesdia.ImagenesDiagro}`}"
+				src= "{data:image/jpeg;base64,${imagenesdia.ImagenesDiagro}}"
 				top
 				width="10%"
 			/>

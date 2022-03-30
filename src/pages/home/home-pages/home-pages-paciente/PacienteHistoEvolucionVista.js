@@ -38,6 +38,11 @@ const PacienteHistoEvolucionVista = () => {
 		dataService.update(id, data)
 			.then(response => {
 				console.log(response);
+				if(response.status === 200){
+					window.alert("Registro modificado exitosamente");
+				} else {
+					window.alert("Ocurrió un error al crear el registro. Codigo " + response.status + "("+ response.statusText +"). "+"Contacte con el administrador");
+				}
 			})
 			.catch(err => {
 				console.log(err);

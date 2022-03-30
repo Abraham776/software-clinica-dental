@@ -40,7 +40,6 @@ const Login = () => {
 			}
 		});
 		if(!logOn){
-			window.location.href = "/Home";
 			window.alert("Combinación de nombre y contraseña incorrectos, intente de nuevo");
 		}
 	}

@@ -32,7 +32,7 @@ const PacienteHistoHistoriales1 = () => {
 	const list = historial1.map(historialrehabilitacionoral => {
 		return (
 			<tr>
-				<td> {historialrehabilitacionoral.MotivoConsultaRehabilitacion} </td>
+				<td> {historialrehabilitacionoral.Fecha} </td>
 				<td> {historialrehabilitacionoral.ObservacionesRehabilitacion} </td>
 				<td><Button block onClick={function routePaciente() { window.location.href = `/ActuaHistoReha/${historialrehabilitacionoral.idHistorialRehabilitacionOral}` }}>Ingresar</Button></td>
 				<td><Button block color="danger" onClick={function deletePaciente() {
@@ -84,9 +84,9 @@ const PacienteHistoHistoriales1 = () => {
 						
 					<thead>
 						<tr>
-							<th> Foto </th>
-							<th> Correo </th>
-							<th> Adeudo</th>
+							<th> Fecha </th>
+							<th> Observacion </th>
+							
 						</tr>
 					</thead>
 					<tbody>

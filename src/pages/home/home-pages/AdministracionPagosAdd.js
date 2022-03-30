@@ -37,29 +37,46 @@ export const AdministracionDoctoresAdd = () => {
 	}, []);
 
 
-	function generar(){
-		document.getElementById("Imprimir").style.display = 'block';
-		let boton=document.getElementById("tratamientosSS")
-		boton.disabled = true;
-		const valortra = trata.map(tratamientos => {
-			if(boton == tratamientos.NombreTratamiento)
-			return (
-				tratamientos.PrecioTratamiento
-				
-			)
-		});
+	function abono(){
+		let valor =document.getElementById("abono1").value
+		if(pacientes.Total<parseInt(valor, 10)){
+			window.alert("El usuario no tiene adeudo");
+		}else{
+			let totalnew = pacientes.Total - parseInt(valor, 10);
+			var data ={Total: totalnew};
+			dataService.update(id, data)
+			.then(response => {
+				console.log(response);
+				if(response.status === 200){
+					window.alert("Abonado");
+				} else {
+					window.alert("Ocurrió un error al crear el registro. Codigo " + response.status + "("+ response.statusText +"). "+"Contacte con el administrador");
+				}
+			})
+			.catch(err => {
+				console.log(err);
+			})
+			window.location.reload();
+		}
+		
 	}
 	function AgregarAdeudo(){
+		let fot = 0;
 		let valor =document.getElementById("tratamientosSS").value
 		const valortra = trata.map(tratamientos => {
-			if(valor == tratamientos.NombreTratamiento)
-			return (
-				tratamientos.PrecioTratamiento
+			if(valor == tratamientos.NombreTratamiento){
 				
-			)
+				fot= tratamientos.PrecioTratamiento;
+				return (
+				 fot
+					)
+			}
+				
+			
 		});
 		
-		let valornuevo = (pacientes.Total + parseInt(valortra, 10));
+		let valornuevo = (pacientes.Total + parseInt(fot, 10));
+		console.log(valortra)
 		var data ={Total: valornuevo};
 		dataService.update(id, data)
 			.then(response => {
@@ -73,6 +90,7 @@ export const AdministracionDoctoresAdd = () => {
 			.catch(err => {
 				console.log(err);
 			})
+			window.location.reload();
 	}
 	function habilitar(){
 		let boton=document.getElementById("tratamientosSS")
@@ -101,11 +119,17 @@ export const AdministracionDoctoresAdd = () => {
 					<Input type="select" name="Tratamiento" id="tratamientosSS" disabled >
 							{list}
 					</Input>
-					<Button className="boton-loca" onClick={AgregarAdeudo}>Agregar</Button>
+					<Button className="boton-loca" onClick={habilitar}>Agregar</Button>
 					</div>
 					<br/>
-					<Button className="me-3" onClick={habilitar}>Cobrar tratamiento</Button>
-					<Button className="me-3" onClick={function back(){window.location.href = "/AdministracionPagos"}}>Volver</Button>
+					<Button className="me-3" onClick={AgregarAdeudo}>Cobrar tratamiento</Button>
+					<br/> <br/>
+					<Label>Abonar</Label>
+					<Input type="text"  name="abono" id="abono1" pattern="[0-9]+"/>
+							
+					
+					<Button className="abono" onClick={abono} >Abonar</Button>
+					<Button className="volveto" onClick={function back(){window.location.href = "/AdministracionPagos"}}>Volver</Button>
 					
 				</Form>
 				<div className="DivImprimirr" id="Imprimir">

@@ -82,9 +82,9 @@ const HistorialOrtodoncia = () => {
 						
 					<thead>
 						<tr>
-							<th> Foto </th>
-							<th> Correo </th>
-							<th> Adeudo</th>
+							<th> Fecha </th>
+							<th> Pronostico </th>
+						
 						</tr>
 					</thead>
 					<tbody>

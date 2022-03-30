@@ -33,7 +33,7 @@ const PacienteHistoEvolucion = () => {
 	const list = evolucion.map(registroevolucion => {
 		return (
 			<tr>
-				<td> {registroevolucion.idRegistroEvolucion} </td>
+				<td> {registroevolucion.FechaRegistro} </td>
 				<td> {registroevolucion.ObservacionesRegistro} </td>
 				<td><Button block onClick={function routePaciente() { window.location.href = `/PacienteHistoEvolucionVista/${registroevolucion.idRegistroEvolucion}` }}>Ingresar</Button></td>
 				<td><Button block color="danger" onClick={function deletePaciente() {

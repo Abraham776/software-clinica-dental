@@ -35,6 +35,11 @@ const NuevoHistorialGeneral = () => {
 		dataService.update(id, data)
 			.then(response => {
 				console.log(response);
+				if(response.status === 200){
+					window.alert("Registro modificado exitosamente");
+				} else {
+					window.alert("Ocurrió un error al crear el registro. Codigo " + response.status + "("+ response.statusText +"). "+"Contacte con el administrador");
+				}
 			})
 			.catch(err => {
 				console.log(err);
@@ -259,7 +264,7 @@ const NuevoHistorialGeneral = () => {
 					</FormGroup>
 
 					<Button onClick={update}>Modificar</Button>
-					<Button onClick={function back(){ window.location.href = `/PacienteHistoHistoriales5/${pacientes.Paciente_idPaciente}` }}>Cancelar</Button>
+					<Button className="botonOdond" onClick={function back(){ window.location.href = `/PacienteHistoHistoriales5/${pacientes.Paciente_idPaciente}` }}>Cancelar</Button>
 				</Form>
 			</div>
 
